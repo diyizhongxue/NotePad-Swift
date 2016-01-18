@@ -24,13 +24,13 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.edgesForExtendedLayout = .None
         
         if currentUser != nil{
-            str = currentUser.username
+            str = "用户：\(currentUser.username)"
         }else{
-            str = "未登录"
+            str = "用户：未登录"
             
         }
         
-        array = [str!, "我发的帖子", "我收藏的帖子", "修改资料", "先留着"]
+        array = [str!, "我发布的帖子", "我收藏的帖子", "修改资料", "先留着"]
         
         creatViews()
         
@@ -42,7 +42,6 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.view.addSubview(self.tableView!)
-        
         
         let settingBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
         settingBtn.setTitle("设置", forState: .Normal)

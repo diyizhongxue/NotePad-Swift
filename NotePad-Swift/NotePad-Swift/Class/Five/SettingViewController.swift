@@ -11,7 +11,7 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var tableView:UITableView?
-    let array = ["登录", "注册", "修改密码", "忘记密码", "退出"]
+    let array = ["修改密码", "忘记密码", "退出"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,33 +58,24 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         case 0:
             if currentUser != nil{
                 //已经登录
-                
-            }else{
-                //去登录
-                self.navigationController?.pushViewController(LogInController(), animated: true)
-            }
-        case 1:
-            if currentUser != nil{
-                //已经登录
-                
-            }else{
-                self.navigationController?.pushViewController(RegisterController(), animated: true)
-            }
-        case 2:
-            if currentUser != nil{
-                //已经登录
                 //修改密码
                 self.navigationController?.pushViewController(PassWordChangeController(), animated: true)
             }else{
                 
+                self.navigationController?.pushViewController(LogInController(), animated: true)
+                
             }
-            
-        case 3:
+        case 1:
             //忘记密码
             self.navigationController?.pushViewController(GorgetPassWordController(), animated: true)
-        case 4:
+        case 2:
             //退出
             AVUser.logOut()
+            
+        case 3:
+            break
+        case 4:
+            break
         default:
             break
         }

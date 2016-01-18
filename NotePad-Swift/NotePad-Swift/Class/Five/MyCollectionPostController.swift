@@ -77,11 +77,8 @@ class MyCollectionPostController: UIViewController, UITableViewDelegate, UITable
         let array = NSMutableArray()
         let user = AVUser.currentUser()
         let postIdArray = user.objectForKey("myCollection") as! NSArray
-        print(postIdArray)
         
         for postId in postIdArray{
-            
-            print(postId)
             
             let query = AVQuery(className: "Post")
             let post = query.getObjectWithId(postId as! String)

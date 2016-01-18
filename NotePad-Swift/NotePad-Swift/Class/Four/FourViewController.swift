@@ -31,7 +31,6 @@ class FourViewController: UIViewController{
     func creatViews(){
         
         
-        
     }
     
     
