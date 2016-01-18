@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NotePad-Swift/Class/Four/FourViewController.swift"
+            timestampString = "474714483.279126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "getNewData()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotePad_Swift.FourViewController.(getNewData (NotePad_Swift.FourViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "NotePad-Swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/test/Swift/NotePad-Swift/NotePad-Swift/Class/Four/FourViewController.swift"
+                  timestampString = "474710197.808227"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "4528">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotePad_Swift.FourViewController.(getNewData (NotePad_Swift.FourViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "NotePad-Swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/test/Swift/NotePad-Swift/NotePad-Swift/Class/Four/FourViewController.swift"
+                  timestampString = "474710197.8089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "4552">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NotePad-Swift/Class/SendPost/DetailCommentController.swift"
+            timestampString = "474712909.12646"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "collectionBtn(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
