@@ -29,14 +29,46 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
 //        NSNotificationCenter.defaultCenter().removeObserver(self)
 //    
 //    }
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(true)
+        
+        getData()
+        
+    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.edgesForExtendedLayout = .None
         self.title = "所有评论"
-        
-        getData()
         creatViews()
+
+        //初始刷新
+        weak var weakSelf = self
+        self.tableView?.addGifHeaderWithRefreshingBlock({ () -> Void in
+            
+            weakSelf?.getData()
+        })
+        
+        let imagesArray = NSMutableArray()
+        for i in 1...6{
+            let imgName = "\(i).jpg"
+            let img = UIImage(named: imgName)
+            imagesArray.addObject(img!)
+        }
+        //不是正在刷新
+        let firstImgArray = imagesArray.subarrayWithRange(NSRange(location: 0, length: 1))
+        self.tableView?.gifHeader.setImages(firstImgArray, forState: MJRefreshHeaderStateIdle)
+        
+        //正在刷新
+        self.tableView?.gifHeader.setImages(imagesArray as [AnyObject], forState: MJRefreshHeaderStateRefreshing)
+        
+//        //下拉加载更多
+//        self.tableView?.addLegendFooterWithRefreshingBlock({ () -> Void in
+//            
+//            weakSelf?.getMoreData()
+//        })
+        
         
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil)
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
@@ -50,6 +82,8 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
 //        print(self.postId)
         let query = AVQuery(className: "Comment")
+        // 按发帖时间降序排列
+        query.orderByDescending("createdAt")
         query.whereKey("post", equalTo: post)
         query.findObjectsInBackgroundWithBlock { (array:[AnyObject]!, error:NSError!) -> Void in
            
@@ -57,8 +91,10 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
                 self.dataArray = array
                 self.tableView?.reloadData()
             }
-
         }
+        
+        //取消动画
+        self.tableView?.header.endRefreshing()
     }
     func creatViews(){
         
