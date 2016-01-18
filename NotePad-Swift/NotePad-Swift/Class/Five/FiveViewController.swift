@@ -9,30 +9,59 @@
 import UIKit
 
 class FiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
     var tableView:UITableView?
-    let array = ["登录", "注册", "修改密码", "忘记密码", "退出"]
-
+    var str :String?
+    var array : NSArray?
+    let currentUser = AVUser.currentUser()
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = .None
-
+        
+        if currentUser != nil{
+            str = currentUser.username
+        }else{
+            str = "未登录"
+            
+        }
+        
+        array = [str!, "我发的帖子", "我收藏的帖子", "修改资料", "先留着"]
+        
         creatViews()
-
+        
     }
     
     func creatViews(){
-
+        
         self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight))
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.view.addSubview(self.tableView!)
         
+        
+        let settingBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
+        settingBtn.setTitle("设置", forState: .Normal)
+        settingBtn.backgroundColor = UIColor.greenColor()
+        settingBtn.addTarget(self, action: "settingBtn:", forControlEvents: .TouchUpInside)
+        //        self.navigationController?.navigationBar.addSubview(btn)
+        let item = UIBarButtonItem(customView: settingBtn)
+        self.navigationItem.rightBarButtonItem = item
+    }
+    
+    func settingBtn(btn:UIButton){
+        
+        self.navigationController?.pushViewController(SettingViewController(), animated: true)
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return array.count
+        return array!.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -42,8 +71,8 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
         }
-
-        cell?.textLabel?.text = array[indexPath.row] 
+        
+        cell?.textLabel?.text = array![indexPath.row] as? String
         
         return cell!
     }
@@ -51,62 +80,55 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let currentUser = AVUser.currentUser()
         
-//        print(currentUser.username)
-        
-        switch indexPath.row{
-        
-        case 0:
-            if currentUser != nil{
-                //已经登录
+        if currentUser != nil{
+            //已经登录
+            switch indexPath.row{
                 
-            }else{
-                //去登录
-                self.navigationController?.pushViewController(LogInController(), animated: true)
-            }
-        case 1:
-            if currentUser != nil{
-                //已经登录
+            case 0:
                 
-            }else{
-                self.navigationController?.pushViewController(RegisterController(), animated: true)
-            }
-        case 2:
-            if currentUser != nil{
-                //已经登录
-                //修改密码
-                self.navigationController?.pushViewController(PassWordChangeController(), animated: true)
-            }else{
+                //                self.navigationController?.pushViewController(LogInController(), animated: true)
+                break
+            case 1:
                 
+                self.navigationController?.pushViewController(MyPostViewController(), animated: true)
+                
+            case 2:
+                
+                break
+                
+            case 3:
+                
+                break
+            case 4:
+                //退出
+                break
+            default:
+                break
             }
-
-        case 3:
-            //忘记密码
-            self.navigationController?.pushViewController(GorgetPassWordController(), animated: true)
-        case 4:
-            //退出
-            AVUser.logOut()
-        default:
-        break
+            
+            
+        }else{
+            //去登录
+            self.navigationController?.pushViewController(LogInController(), animated: true)
         }
-        
         
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

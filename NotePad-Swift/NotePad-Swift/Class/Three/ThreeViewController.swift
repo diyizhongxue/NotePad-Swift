@@ -10,7 +10,7 @@ import UIKit
 
 class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let cellId = "myCollectionCell"
-
+    
     var tableView :UITableView?
     var myCollectionArray = NSMutableArray()
     var page:Int = 1
@@ -52,7 +52,7 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //下拉加载更多
         self.tableView?.addLegendFooterWithRefreshingBlock({ () -> Void in
             
-//            weakSelf?.getMoreData()
+            //            weakSelf?.getMoreData()
         })
         
         
@@ -76,108 +76,108 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let array = NSMutableArray()
         let user = AVUser.currentUser()
-        let postIdArray = user.objectForKey("myCollection") as! NSArray
-        print(postIdArray)
+        //        let postIdArray = user.objectForKey("myCollection") as! NSArray
+        //        print(postIdArray)
         
-//        for postId in postIdArray{
-//        
-//            print(postId)
-//            
-//            let query = AVQuery(className: "Post")
-//            let post = query.getObjectWithId(postId as! String)
-//            let model = OneModel()
-//            
-//            let str = post.objectForKey("content") as! String
-//            model.content = str
-//            
-//            if post.objectForKey("image") != nil{
-//                
-//                let file = post.objectForKey("image") as! AVFile
-//                let data = file.getData()
-//                let image = UIImage(data: data)
-//                
-//                model.image = image!
-//                model.isImageExist = true
-//            }
-//            
-//            if post.objectForKey("uname") != nil{
-//                let uname = post.objectForKey("uname") as? String
-//                model.name = uname!
-//            }
-//            
-//            let creatDate = post.objectForKey("createdAt") as? NSDate
-//            let dateFmt = NSDateFormatter()
-//            dateFmt.locale = NSLocale(localeIdentifier: "zh_CN")
-//            dateFmt.dateFormat = "yyyy-MM-dd HH:mm:ss"  // HH 代表 24 时 计时法
-//            let creatTime = dateFmt.stringFromDate(creatDate!)
-//            model.time = creatTime
-//            
-//            model.postId = post.objectId
-//            
-//            array.addObject(model)
-//
-//        }
+        //        for postId in postIdArray{
+        //
+        //            print(postId)
+        //
+        //            let query = AVQuery(className: "Post")
+        //            let post = query.getObjectWithId(postId as! String)
+        //            let model = OneModel()
+        //
+        //            let str = post.objectForKey("content") as! String
+        //            model.content = str
+        //
+        //            if post.objectForKey("image") != nil{
+        //
+        //                let file = post.objectForKey("image") as! AVFile
+        //                let data = file.getData()
+        //                let image = UIImage(data: data)
+        //
+        //                model.image = image!
+        //                model.isImageExist = true
+        //            }
+        //
+        //            if post.objectForKey("uname") != nil{
+        //                let uname = post.objectForKey("uname") as? String
+        //                model.name = uname!
+        //            }
+        //
+        //            let creatDate = post.objectForKey("createdAt") as? NSDate
+        //            let dateFmt = NSDateFormatter()
+        //            dateFmt.locale = NSLocale(localeIdentifier: "zh_CN")
+        //            dateFmt.dateFormat = "yyyy-MM-dd HH:mm:ss"  // HH 代表 24 时 计时法
+        //            let creatTime = dateFmt.stringFromDate(creatDate!)
+        //            model.time = creatTime
+        //
+        //            model.postId = post.objectId
+        //
+        //            array.addObject(model)
+        //
+        //        }
         
         self.myCollectionArray.removeAllObjects()
         self.myCollectionArray.addObjectsFromArray(array as [AnyObject])
         
         self.tableView?.reloadData()
-//        //我发过的帖子
-//        //取消动画
+        //        //我发过的帖子
+        //        //取消动画
         self.tableView?.header.endRefreshing()
     }
-//    func getMoreData(){
-//        
-//        let query = AVQuery(className: "Post")
-//        query.whereKey("uname", equalTo: AVUser.currentUser().username)
-//        
-//        query.limit = 10; // 最多返回 10 条结果
-//        query.skip = 10 * page; // 跳过前 10 条结果
-//        // 按发帖时间降序排列
-//        query.orderByDescending("createdAt")
-//        query.findObjectsInBackgroundWithBlock({ (arr:[AnyObject]!, error:NSError!) -> Void in
-//            
-//            for item in arr{
-//                
-//                let model = OneModel()
-//                let post = item as! AVObject
-//                
-//                let str = post.objectForKey("content") as! String
-//                model.content = str
-//                
-//                if post.objectForKey("image") != nil{
-//                    let file = post.objectForKey("image") as! AVFile
-//                    let data = file.getData()
-//                    let image = UIImage(data: data)
-//                    
-//                    model.image = image!
-//                    model.isImageExist = true
-//                }
-//                
-//                if post.objectForKey("uname") != nil{
-//                    let uname = post.objectForKey("uname") as? String
-//                    model.name = uname!
-//                }
-//                
-//                let creatDate = post.objectForKey("createdAt") as? NSDate
-//                let dateFmt = NSDateFormatter()
-//                dateFmt.locale = NSLocale(localeIdentifier: "zh_CN")
-//                dateFmt.dateFormat = "yyyy-MM-dd HH:mm:ss"  // HH 代表 24 时 计时法
-//                let creatTime = dateFmt.stringFromDate(creatDate!)
-//                model.time = creatTime
-//                
-//                model.postId = post.objectId
-//                
-//                self.myCollectionArray.addObject(model)
-//            }
-//            
-//            self.tableView?.reloadData()
-//        })
-//        
-//        
-//        page += 1
-//        self.tableView?.footer.endRefreshing()
-//    }
+    //    func getMoreData(){
+    //
+    //        let query = AVQuery(className: "Post")
+    //        query.whereKey("uname", equalTo: AVUser.currentUser().username)
+    //
+    //        query.limit = 10; // 最多返回 10 条结果
+    //        query.skip = 10 * page; // 跳过前 10 条结果
+    //        // 按发帖时间降序排列
+    //        query.orderByDescending("createdAt")
+    //        query.findObjectsInBackgroundWithBlock({ (arr:[AnyObject]!, error:NSError!) -> Void in
+    //
+    //            for item in arr{
+    //
+    //                let model = OneModel()
+    //                let post = item as! AVObject
+    //
+    //                let str = post.objectForKey("content") as! String
+    //                model.content = str
+    //
+    //                if post.objectForKey("image") != nil{
+    //                    let file = post.objectForKey("image") as! AVFile
+    //                    let data = file.getData()
+    //                    let image = UIImage(data: data)
+    //
+    //                    model.image = image!
+    //                    model.isImageExist = true
+    //                }
+    //
+    //                if post.objectForKey("uname") != nil{
+    //                    let uname = post.objectForKey("uname") as? String
+    //                    model.name = uname!
+    //                }
+    //
+    //                let creatDate = post.objectForKey("createdAt") as? NSDate
+    //                let dateFmt = NSDateFormatter()
+    //                dateFmt.locale = NSLocale(localeIdentifier: "zh_CN")
+    //                dateFmt.dateFormat = "yyyy-MM-dd HH:mm:ss"  // HH 代表 24 时 计时法
+    //                let creatTime = dateFmt.stringFromDate(creatDate!)
+    //                model.time = creatTime
+    //
+    //                model.postId = post.objectId
+    //
+    //                self.myCollectionArray.addObject(model)
+    //            }
+    //
+    //            self.tableView?.reloadData()
+    //        })
+    //
+    //
+    //        page += 1
+    //        self.tableView?.footer.endRefreshing()
+    //    }
     
     func creatViews(){
         
@@ -259,15 +259,15 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

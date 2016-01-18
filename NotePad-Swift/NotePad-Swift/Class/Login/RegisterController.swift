@@ -125,7 +125,7 @@ class RegisterController: UIViewController {
             user.signUpInBackgroundWithBlock({ (succeeded:Bool, error:NSError!) -> Void in
                 if succeeded{
                     //注册好 就已经登录了
-                    print("帐号注册成功")
+                    print("帐号注册成功，并且已经登陆")
 
                 }else{
                     print(error)

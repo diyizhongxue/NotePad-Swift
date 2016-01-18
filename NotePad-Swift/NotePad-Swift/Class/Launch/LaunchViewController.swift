@@ -80,7 +80,7 @@ class LaunchViewController: UIViewController {
         
         let imageView = UIImageView(frame: CGRect(x:0, y:0, width:kScreenWidth, height:kScreenHeight))
         self.view.addSubview(imageView)
-        imageView.image = UIImage(named:"Default")
+        imageView.image = UIImage(named:"qidongye")
         
         imageView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target:self, action:"imageAction")
