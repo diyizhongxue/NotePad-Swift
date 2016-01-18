@@ -18,22 +18,24 @@ import UIKit
 class DetailCommentController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate{
 
     var tableView:UITableView?
-    var dataArray = NSArray()
+    var dataArray = NSMutableArray()
     var postId:String?
     var inPutView:UIView?
+    var page:Int = 1
 
 
-//    deinit{
-//        // 删除键盘监听
+
+    deinit{
+        // 删除键盘监听
 //        print("删除键盘监听")
-//        NSNotificationCenter.defaultCenter().removeObserver(self)
-//    
-//    }
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    
+    }
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(true)
         
-        getData()
+        self.getNewData()
         
     }
     override func viewDidLoad() {
@@ -47,7 +49,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         weak var weakSelf = self
         self.tableView?.addGifHeaderWithRefreshingBlock({ () -> Void in
             
-            weakSelf?.getData()
+            weakSelf?.getNewData()
         })
         
         let imagesArray = NSMutableArray()
@@ -63,11 +65,11 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         //正在刷新
         self.tableView?.gifHeader.setImages(imagesArray as [AnyObject], forState: MJRefreshHeaderStateRefreshing)
         
-//        //下拉加载更多
-//        self.tableView?.addLegendFooterWithRefreshingBlock({ () -> Void in
-//            
-//            weakSelf?.getMoreData()
-//        })
+        //下拉加载更多
+        self.tableView?.addLegendFooterWithRefreshingBlock({ () -> Void in
+            
+            weakSelf?.getMoreData()
+        })
         
         
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil)
@@ -77,18 +79,21 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
 
        
     }
-    func getData(){
+    func getNewData(){
         
         let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
-//        print(self.postId)
         let query = AVQuery(className: "Comment")
+        query.limit = 10; // 最多返回 10 条结果
+        page = 1
+
         // 按发帖时间降序排列
         query.orderByDescending("createdAt")
         query.whereKey("post", equalTo: post)
         query.findObjectsInBackgroundWithBlock { (array:[AnyObject]!, error:NSError!) -> Void in
            
             if array != nil{
-                self.dataArray = array
+                self.dataArray.removeAllObjects()
+                self.dataArray.addObjectsFromArray(array as [AnyObject])
                 self.tableView?.reloadData()
             }
         }
@@ -96,6 +101,29 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         //取消动画
         self.tableView?.header.endRefreshing()
     }
+    func getMoreData(){
+        //
+
+        let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
+        let query = AVQuery(className: "Comment")
+        query.limit = 10; // 最多返回 10 条结果
+        query.skip = 10 * page; // 跳过前 10 条结果
+        // 按发帖时间降序排列
+        query.orderByDescending("createdAt")
+        query.whereKey("post", equalTo: post)
+        query.findObjectsInBackgroundWithBlock { (array:[AnyObject]!, error:NSError!) -> Void in
+            
+            if array != nil{
+                
+                self.dataArray.addObjectsFromArray(array)
+                self.tableView?.reloadData()
+            }
+        }
+        
+        page += 1
+        self.tableView?.footer.endRefreshing()
+    }
+
     func creatViews(){
         
         self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight-64-49))
@@ -110,7 +138,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         
         let textView = UITextView(frame: CGRect(x: 5, y: 5, width: kScreenWidth - 55, height: 40))
         textView.delegate = self
-        textView.tag = 102
+        textView.tag = 101
         textView.backgroundColor = UIColor.redColor()
         self.inPutView?.addSubview(textView)
         
@@ -149,10 +177,9 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
     
     func sendComment(btn:UIButton){
         
-        let textView = self.inPutView?.viewWithTag(102) as! UITextView
+        let textView = self.inPutView?.viewWithTag(101) as! UITextView
         textView.resignFirstResponder()
 
-        
         let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
         let myComment = AVObject(className: "Comment")
         myComment.setObject(textView.text, forKey: "comment")
@@ -163,7 +190,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
             if succeeded{
                 // post 保存成功
                 
-                self.getData()
+                self.getNewData()
             }else{
                 
                 // 保存 post 时出错
@@ -206,7 +233,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
     
     /// 监听键盘弹出
     func keyboardDidShow(notification: NSNotification) {
-        print("键盘已经弹出")
+//        print("键盘已经弹出")
         
         let info  = notification.userInfo!
         let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
@@ -219,7 +246,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
     
     /// 监听键盘收回
     func keyboardWillHide(notification: NSNotification) {
-        print("键盘已经收回")
+//        print("键盘已经收回")
 //        let info  = notification.userInfo!
 //        let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
 //        let rawFrame = value.CGRectValue

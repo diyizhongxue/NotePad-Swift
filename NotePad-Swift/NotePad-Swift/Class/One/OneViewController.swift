@@ -84,7 +84,7 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let array = NSMutableArray()
         let query = AVQuery(className: "Post")
         query.limit = 10; // 最多返回 10 条结果
-        //        query.skip = 10; // 跳过前 10 条结果
+        page = 1
         // 按发帖时间升序排列
         //        query.orderByAscending("createdAt")
         // 按发帖时间降序排列

@@ -37,3 +37,15 @@ class CommonViewController: UIViewController {
 
 
 }
+/*
+所有 tag
+
+tag ＝ 0 1 2 3 4 tabBarItem
+tag ＝ 101 写评论内容的 UITextView
+
+
+
+
+
+
+*/

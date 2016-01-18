@@ -93,9 +93,7 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.navigationController?.pushViewController(MyPostViewController(), animated: true)
                 
             case 2:
-                
-                break
-                
+                self.navigationController?.pushViewController(MyCollectionPostController(), animated: true)
             case 3:
                 
                 break
