@@ -106,7 +106,18 @@ class RegisterController: UIViewController {
         user.signUpInBackgroundWithBlock({ (succeeded:Bool, error:NSError!) -> Void in
             
         })
-        
+//        AVOSCloud.requestSmsCodeWithPhoneNumber(self.nameTextField?.text, appName: "NotePad", operation: "注册短信验证", timeToLive: 3) { (succeeded:Bool, error:NSError!) -> Void in
+//            
+//            if succeeded{
+//                
+//                print("短信发送成功")
+//                
+//            }else{
+//                print(error)
+//                
+//            }
+//            
+//        }
     }
     
     func register(btn:UIButton){
@@ -135,15 +146,26 @@ class RegisterController: UIViewController {
 
         case 1:
             //手机注册
-            print("注册\(index)")
-            let user = AVUser()
-            user.username = self.nameTextField?.text
-            user.password = self.passWordTextField?.text
-            user.mobilePhoneNumber = self.nameTextField?.text
-            user.signUpInBackgroundWithBlock({ (succeeded:Bool, error:NSError!) -> Void in
-                
-            })
-            
+//            print("注册\(index)")
+//            AVOSCloud.verifySmsCode(self.phoneTextField?.text, mobilePhoneNumber: self.nameTextField?.text, callback: { (succeeded:Bool, error:NSError!) -> Void in
+//                
+//                if succeeded{
+                    //注册好 就已经登录了
+                print("帐号注册成功，并且已经登陆")
+                let user = AVUser()
+                user.username = self.nameTextField?.text
+                user.password = self.passWordTextField?.text
+                user.mobilePhoneNumber = self.nameTextField?.text
+                user.signUpInBackgroundWithBlock({ (succeeded:Bool, error:NSError!) -> Void in
+                    
+                })
+                    
+//                }else{
+//                    print(error)
+//                    
+//                }
+//            
+//            })
             
         default:
             break

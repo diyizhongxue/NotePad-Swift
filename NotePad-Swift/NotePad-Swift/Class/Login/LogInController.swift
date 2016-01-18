@@ -68,6 +68,8 @@ class LogInController: UIViewController {
         AVUser.logInWithUsernameInBackground(self.nameTextField?.text, password: self.passWordTextField?.text) { (user:AVUser!, error:NSError!) -> Void in
             if user != nil{
                 print("登录成功")
+                
+                self.navigationController?.popViewControllerAnimated(true)
 
             }else{
                 print(error)

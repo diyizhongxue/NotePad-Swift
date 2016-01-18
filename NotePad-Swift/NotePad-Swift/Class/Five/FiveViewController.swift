@@ -13,27 +13,29 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
     var tableView:UITableView?
     var str :String?
     var array : NSArray?
-    let currentUser = AVUser.currentUser()
+    var currentUser : AVUser?
     
     
-    
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        currentUser = AVUser.currentUser()
+        
+        if currentUser != nil{
+            str = "用户：\(currentUser!.username)"
+        }else{
+            str = "用户：请登录"
+        }
+        array = [str!, "我发布的帖子", "我收藏的帖子", "修改资料", "先留着"]
+        
+        self.tableView?.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = .None
         
-        if currentUser != nil{
-            str = "用户：\(currentUser.username)"
-        }else{
-            str = "用户：未登录"
-            
-        }
-        
-        array = [str!, "我发布的帖子", "我收藏的帖子", "修改资料", "先留着"]
-        
         creatViews()
-        
     }
     
     func creatViews(){
@@ -76,8 +78,6 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell!
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let currentUser = AVUser.currentUser()
         
         if currentUser != nil{
             //已经登录

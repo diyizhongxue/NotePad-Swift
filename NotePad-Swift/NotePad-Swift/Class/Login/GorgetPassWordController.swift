@@ -29,12 +29,12 @@ class GorgetPassWordController: UIViewController {
         let btn = UIButton(frame: CGRect(x: 10, y: 60, width: kScreenWidth - 20, height: 40))
         btn.setTitle("确定", forState: .Normal)
         btn.backgroundColor = UIColor.greenColor()
-        btn.addTarget(self, action: "gorgetPassWord:", forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: "forgetPassWord:", forControlEvents: .TouchUpInside)
         self.view?.addSubview(btn)
         
     }
     
-    func gorgetPassWord(btn:UIButton){
+    func forgetPassWord(btn:UIButton){
         
 //        AVUser.requestPasswordResetForEmailInBackground(self.passWordTextField?.text) { (succeeded:Bool, error:NSError!) -> Void in
 //            
