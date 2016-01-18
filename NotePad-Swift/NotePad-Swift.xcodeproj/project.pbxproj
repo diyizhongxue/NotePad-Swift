@@ -21,7 +21,6 @@
 		5A42B6331C3CE5EF00ABE789 /* PassWordChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B6321C3CE5EF00ABE789 /* PassWordChangeController.swift */; };
 		5A42B6351C3CE61600ABE789 /* GorgetPassWordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B6341C3CE61600ABE789 /* GorgetPassWordController.swift */; };
 		5A42B63C1C3D05E000ABE789 /* SendPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B63B1C3D05E000ABE789 /* SendPostController.swift */; };
-		5A42B63E1C3D1B5500ABE789 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B63D1C3D1B5500ABE789 /* CommentController.swift */; };
 		5A42B6401C3D205F00ABE789 /* DetailCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B63F1C3D205F00ABE789 /* DetailCommentController.swift */; };
 		5A89EE261C3DFEBA0073ED51 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A89EE081C3DFEBA0073ED51 /* 1.jpg */; };
 		5A89EE271C3DFEBA0073ED51 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A89EE091C3DFEBA0073ED51 /* 2.jpg */; };
@@ -400,7 +399,6 @@
 		5A42B6321C3CE5EF00ABE789 /* PassWordChangeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassWordChangeController.swift; sourceTree = "<group>"; };
 		5A42B6341C3CE61600ABE789 /* GorgetPassWordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GorgetPassWordController.swift; sourceTree = "<group>"; };
 		5A42B63B1C3D05E000ABE789 /* SendPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendPostController.swift; sourceTree = "<group>"; };
-		5A42B63D1C3D1B5500ABE789 /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		5A42B63F1C3D205F00ABE789 /* DetailCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCommentController.swift; sourceTree = "<group>"; };
 		5A89EE081C3DFEBA0073ED51 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		5A89EE091C3DFEBA0073ED51 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -839,7 +837,6 @@
 			isa = PBXGroup;
 			children = (
 				5A42B63B1C3D05E000ABE789 /* SendPostController.swift */,
-				5A42B63D1C3D1B5500ABE789 /* CommentController.swift */,
 				5A42B63F1C3D205F00ABE789 /* DetailCommentController.swift */,
 			);
 			path = SendPost;
@@ -1863,7 +1860,6 @@
 				5A3A1F661C3F42AD006D8C4C /* OneCell.swift in Sources */,
 				5A89EE361C3DFEBA0073ED51 /* UIScrollView+MJRefresh.m in Sources */,
 				D74A186E1C2FDCD100310F66 /* OneViewController.swift in Sources */,
-				5A42B63E1C3D1B5500ABE789 /* CommentController.swift in Sources */,
 				5A89EE331C3DFEBA0073ED51 /* MJRefreshLegendFooter.m in Sources */,
 				5A89EE321C3DFEBA0073ED51 /* MJRefreshHeader.m in Sources */,
 				D74A18391C2F640C00310F66 /* ViewController.swift in Sources */,

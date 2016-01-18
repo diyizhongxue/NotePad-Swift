@@ -71,10 +71,10 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         
         
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidShow:"), name:UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidShow:"), name:UIKeyboardDidShowNotification, object: nil)
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidHide:"), name:UIKeyboardDidHideNotification, object: nil)
-//        
+
        
     }
     func getData(){
@@ -110,6 +110,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         
         let textView = UITextView(frame: CGRect(x: 5, y: 5, width: kScreenWidth - 55, height: 40))
         textView.delegate = self
+        textView.tag = 102
         textView.backgroundColor = UIColor.redColor()
         self.inPutView?.addSubview(textView)
         
@@ -147,13 +148,30 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func sendComment(btn:UIButton){
-        let vc = CommentController()
-        vc.postId = self.postId
-        self.navigationController?.pushViewController(vc, animated: true)
-        self.view.endEditing(false)
         
-//        self.inPutView?.resignFirstResponder()
-    
+        let textView = self.inPutView?.viewWithTag(102) as! UITextView
+        textView.resignFirstResponder()
+
+        
+        let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
+        let myComment = AVObject(className: "Comment")
+        myComment.setObject(textView.text, forKey: "comment")
+        myComment.setObject(post, forKey: "post")
+        myComment.setObject(AVUser.currentUser(), forKey: "user")
+        myComment.saveInBackgroundWithBlock { (succeeded:Bool, error:NSError!) -> Void in
+            
+            if succeeded{
+                // post 保存成功
+                
+                self.getData()
+            }else{
+                
+                // 保存 post 时出错
+                print(error)
+            }
+        }
+        
+        textView.text = ""
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -195,19 +213,19 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         let rawFrame = value.CGRectValue
 //        let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
         var frame = self.inPutView?.frame
-        frame?.origin.y -= rawFrame.size.height
+        frame? = CGRect(x: 0, y: kScreenHeight - 49 - 64 - rawFrame.size.height, width: kScreenWidth, height: 49)
         self.inPutView?.frame = frame!
     }
     
     /// 监听键盘收回
-    func keyboardDidHide(notification: NSNotification) {
+    func keyboardWillHide(notification: NSNotification) {
         print("键盘已经收回")
-        let info  = notification.userInfo!
-        let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
-        let rawFrame = value.CGRectValue
+//        let info  = notification.userInfo!
+//        let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
+//        let rawFrame = value.CGRectValue
         //        let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
         var frame = self.inPutView?.frame
-        frame?.origin.y += rawFrame.size.height
+        frame? = CGRect(x: 0, y: kScreenHeight - 49 - 64, width: kScreenWidth, height: 49)
         self.inPutView?.frame = frame!
     }
     
