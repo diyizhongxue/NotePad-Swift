@@ -20,7 +20,6 @@ tableView不显示横线
 隐藏 tabBar
 
 加载storyboard
-
 navigationItem
 
 NSDate
@@ -29,7 +28,7 @@ NSDate
 
 import UIKit
 
-class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SDCycleScrollViewDelegate{
 
     let cellId = "homeCell"
 
@@ -196,8 +195,23 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //tableView不显示横线
         tableView?.separatorStyle = .None
         self.tableView!.registerClass(OneCell.self, forCellReuseIdentifier: cellId)
-
         self.view.addSubview(tableView!)
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 190))
+        headerView.backgroundColor = UIColor.grayColor()
+        let img1 = UIImage(named:"h1.jpg")
+        let img2 = UIImage(named:"h2.jpg")
+        let img3 = UIImage(named:"h3.jpg")
+        let img4 = UIImage(named:"h4.jpg")
+        let images = [img1 as! AnyObject,img2 as! AnyObject,img3 as! AnyObject,img4 as! AnyObject];
+        let titles = ["豆瓣电台","百度贴吧","qq空间","新浪微博"];
+        let cycleScrollView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 180), imagesGroup: images)
+        cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
+        cycleScrollView.delegate = self
+        cycleScrollView.autoScrollTimeInterval = 2.0
+        cycleScrollView.titlesGroup = titles
+        headerView.addSubview(cycleScrollView)
+        self.tableView?.tableHeaderView = headerView
         
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
         btn.setTitle("发帖子", forState: .Normal)
@@ -268,14 +282,42 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             return size.height + 60
         }
     }
+    //MARK: 点击 轮播图
+    func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
+        
+        print("\(index)")
+        if index == 0{
+        
+            let storyboard = UIStoryboard(name: "Douban", bundle: NSBundle.mainBundle())
+            let douBanVC = storyboard.instantiateViewControllerWithIdentifier("DoubanViewController")
+            douBanVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(douBanVC, animated: true)
+        }
+
+        
+    }
     
+    //MARK:-计算字符串高度
     func captureTextSizeWithText(text:NSString, textWidth width:CGFloat, font:String)->CGSize{
         
         let constraint = CGSize(width: width, height: 20000.0)
         let tdic = [font:NSFontAttributeName]
         let rect = text.boundingRectWithSize(constraint, options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: tdic, context: nil)
         
-        let size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        var size:CGSize
+        if rect.size.height < 15{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height)
+            
+        }else if rect.size.height > 15 && rect.size.height < 30{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 10)
+            
+        }else{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        }
+        
+        if text.isEqualToString(""){
+            size = CGSizeZero
+        }
         
         return size
         

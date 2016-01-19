@@ -62,23 +62,19 @@ class OneCell: UITableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        
         creatViews()
     }
 
     
     func creatViews(){
         
-        self.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: 250)
-
-        
         view = UIView(frame: CGRect(x: 0, y: 240, width: kScreenWidth, height: 10))
         view!.backgroundColor = UIColor.lightGrayColor()
         self.addSubview(view!)
         
-        
         self.icon = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height:30))
         self.icon?.backgroundColor = UIColor.redColor()
+        self.icon?.image = UIImage(named: "home_tab_icon_4")
         self.addSubview(self.icon!)
         
         self.nameLabel = UILabel(frame: CGRect(x: 40, y: 5, width: 100, height: 30))
@@ -92,6 +88,7 @@ class OneCell: UITableViewCell {
         self.addSubview(self.creatTimtLabel!)
         
         self.contentLabel = UILabel(frame: CGRect(x: 40, y: 40, width: kScreenWidth - 50, height: 30))
+//        self.contentLabel?.backgroundColor = UIColor.redColor()
         self.contentLabel?.font = UIFont.systemFontOfSize(15)
         self.addSubview(self.contentLabel!)
         
@@ -115,9 +112,21 @@ class OneCell: UITableViewCell {
         let constraint = CGSize(width: width, height: 20000.0)
         let tdic = [font:NSFontAttributeName]
         let rect = text.boundingRectWithSize(constraint, options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: tdic, context: nil)
+
+        var size:CGSize
+        if rect.size.height < 15{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height)
+
+        }else if rect.size.height > 15 && rect.size.height < 30{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 10)
+
+        }else{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        }
         
-        let size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
-        
+        if text.isEqualToString(""){
+            size = CGSizeZero
+        }
         return size
         
     }

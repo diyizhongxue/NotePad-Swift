@@ -76,51 +76,57 @@ class MyCollectionPostController: UIViewController, UITableViewDelegate, UITable
         
         let array = NSMutableArray()
         let user = AVUser.currentUser()
-        let postIdArray = user.objectForKey("myCollection") as! NSArray
+        if user.objectForKey("myCollection") != nil{
         
-        for postId in postIdArray{
+            let postIdArray = user.objectForKey("myCollection") as! NSArray
             
-            let query = AVQuery(className: "Post")
-            let post = query.getObjectWithId(postId as! String)
-            let model = OneModel()
-            
-            let str = post.objectForKey("content") as! String
-            model.content = str
-            
-            if post.objectForKey("image") != nil{
+            for postId in postIdArray{
                 
-                let file = post.objectForKey("image") as! AVFile
-                let data = file.getData()
-                let image = UIImage(data: data)
+                let query = AVQuery(className: "Post")
+                let post = query.getObjectWithId(postId as! String)
+                let model = OneModel()
                 
-                model.image = image!
-                model.isImageExist = true
+                let str = post.objectForKey("content") as! String
+                model.content = str
+                
+                if post.objectForKey("image") != nil{
+                    
+                    let file = post.objectForKey("image") as! AVFile
+                    let data = file.getData()
+                    let image = UIImage(data: data)
+                    
+                    model.image = image!
+                    model.isImageExist = true
+                }
+                
+                if post.objectForKey("uname") != nil{
+                    let uname = post.objectForKey("uname") as? String
+                    model.name = uname!
+                }
+                
+                let creatDate = post.objectForKey("createdAt") as? NSDate
+                let dateFmt = NSDateFormatter()
+                dateFmt.locale = NSLocale(localeIdentifier: "zh_CN")
+                dateFmt.dateFormat = "yyyy-MM-dd HH:mm:ss"  // HH 代表 24 时 计时法
+                let creatTime = dateFmt.stringFromDate(creatDate!)
+                model.time = creatTime
+                
+                model.postId = post.objectId
+                
+                array.addObject(model)
+                
             }
             
-            if post.objectForKey("uname") != nil{
-                let uname = post.objectForKey("uname") as? String
-                model.name = uname!
-            }
+            self.myCollectionArray.removeAllObjects()
+            self.myCollectionArray.addObjectsFromArray(array as [AnyObject])
             
-            let creatDate = post.objectForKey("createdAt") as? NSDate
-            let dateFmt = NSDateFormatter()
-            dateFmt.locale = NSLocale(localeIdentifier: "zh_CN")
-            dateFmt.dateFormat = "yyyy-MM-dd HH:mm:ss"  // HH 代表 24 时 计时法
-            let creatTime = dateFmt.stringFromDate(creatDate!)
-            model.time = creatTime
-            
-            model.postId = post.objectId
-            
-            array.addObject(model)
-            
+            self.tableView?.reloadData()
+            //        //我发过的帖子
+            //        //取消动画
+        }else{
+        
         }
-        
-        self.myCollectionArray.removeAllObjects()
-        self.myCollectionArray.addObjectsFromArray(array as [AnyObject])
-        
-        self.tableView?.reloadData()
-        //        //我发过的帖子
-        //        //取消动画
+ 
         self.tableView?.header.endRefreshing()
     }
     func getMoreData(){
@@ -246,8 +252,20 @@ class MyCollectionPostController: UIViewController, UITableViewDelegate, UITable
         let tdic = [font:NSFontAttributeName]
         let rect = text.boundingRectWithSize(constraint, options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: tdic, context: nil)
         
-        let size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        var size:CGSize
+        if rect.size.height < 15{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height)
+            
+        }else if rect.size.height > 15 && rect.size.height < 30{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 10)
+            
+        }else{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        }
         
+        if text.isEqualToString(""){
+            size = CGSizeZero
+        }
         return size
         
     }

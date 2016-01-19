@@ -255,8 +255,20 @@ class MyPostViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let tdic = [font:NSFontAttributeName]
         let rect = text.boundingRectWithSize(constraint, options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: tdic, context: nil)
         
-        let size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        var size:CGSize
+        if rect.size.height < 15{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height)
+            
+        }else if rect.size.height > 15 && rect.size.height < 30{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 10)
+            
+        }else{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        }
         
+        if text.isEqualToString(""){
+            size = CGSizeZero
+        }
         return size
         
     }
