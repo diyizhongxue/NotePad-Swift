@@ -229,7 +229,7 @@ class MyPostViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let model:OneModel = self.myDataArray[indexPath.row] as! OneModel
         //评论
         let vc = DetailCommentController()
-        vc.postId = model.postId
+        vc.model = model
         //隐藏 tabBar
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)

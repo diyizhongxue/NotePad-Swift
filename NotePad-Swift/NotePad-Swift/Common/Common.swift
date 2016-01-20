@@ -1,5 +1,5 @@
 //
-//  CommonViewController.swift
+//  Common.swift
 //  NotePad-Swift
 //
 //  Created by Silver on 15/12/27.
@@ -11,10 +11,6 @@
 String 转换为 float
 
 */
-
-
-
-
 
 import UIKit
 
@@ -36,18 +32,29 @@ let app_Version = infoDictionary.objectForKey("CFBundleShortVersionString")
 // app build版本
 let app_build = infoDictionary.objectForKey("CFBundleVersion")
 
-class CommonViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class Common: NSObject {
+    
+    class func captureTextSizeWithText(text:NSString, textWidth width:CGFloat, font:String)->CGSize{
         
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let constraint = CGSize(width: width, height: 20000.0)
+        let tdic = [font:NSFontAttributeName]
+        let rect = text.boundingRectWithSize(constraint, options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: tdic, context: nil)
+        
+        var size:CGSize
+        if rect.size.height < 15{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height)
+            
+        }else if rect.size.height > 15 && rect.size.height < 30{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 10)
+            
+        }else{
+            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
+        }
+        
+        if text.isEqualToString(""){
+            size = CGSizeZero
+        }
+        return size
     }
     
 }

@@ -19,15 +19,13 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
 
     var tableView:UITableView?
     var dataArray = NSMutableArray()
-    var postId:String?
     var inPutView:UIView?
     var page:Int = 1
-
+    var model :OneModel?
 
 
     deinit{
         // 删除键盘监听
-//        print("删除键盘监听")
         NSNotificationCenter.defaultCenter().removeObserver(self)
     
     }
@@ -81,7 +79,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
     }
     func getNewData(){
         
-        let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
+        let post = AVObject(withoutDataWithClassName: "Post", objectId: model!.postId)
         let query = AVQuery(className: "Comment")
         query.limit = 10; // 最多返回 10 条结果
         page = 1
@@ -104,7 +102,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
     func getMoreData(){
         //
 
-        let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
+        let post = AVObject(withoutDataWithClassName: "Post", objectId: model!.postId)
         let query = AVQuery(className: "Comment")
         query.limit = 10; // 最多返回 10 条结果
         query.skip = 10 * page; // 跳过前 10 条结果
@@ -130,6 +128,67 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.view.addSubview(self.tableView!)
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 190))
+        headerView.backgroundColor = UIColor.purpleColor()
+        
+        let icon = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height:30))
+        icon.backgroundColor = UIColor.redColor()
+        icon.image = UIImage(named: "home_tab_icon_4")
+        headerView.addSubview(icon)
+        
+        let nameLabel = UILabel(frame: CGRect(x: 40, y: 5, width: 100, height: 30))
+        nameLabel.text = "游客用户"
+        nameLabel.font = UIFont.systemFontOfSize(12)
+        headerView.addSubview(nameLabel)
+        
+        let creatTimtLabel = UILabel(frame: CGRect(x: kScreenWidth - 155, y: 5, width: 150, height: 30))
+        creatTimtLabel.font = UIFont.systemFontOfSize(12)
+        creatTimtLabel.textAlignment = .Right
+        headerView.addSubview(creatTimtLabel)
+        
+        let contentLabel = UILabel(frame: CGRect(x: 40, y: 40, width: kScreenWidth - 50, height: 30))
+        //        self.contentLabel?.backgroundColor = UIColor.redColor()
+        contentLabel.font = UIFont.systemFontOfSize(15)
+        headerView.addSubview(contentLabel)
+        
+        let imgView = UIImageView(frame: CGRect(x: 100, y: 75, width: kScreenWidth - 200, height: kScreenWidth - 200))
+        imgView.backgroundColor = UIColor.redColor()
+        headerView.addSubview(imgView)
+        
+        if model!.name.isEmpty{
+            nameLabel.text = model!.name
+        }
+        creatTimtLabel.text = model!.time
+        contentLabel.text = model!.content
+        contentLabel.numberOfLines = 0
+        let size = Common.captureTextSizeWithText(model!.content, textWidth: kScreenWidth - 60, font: "15")
+        contentLabel.frame.size = size
+
+        var imgFrame = imgView.frame
+        imgFrame.origin.y = 75 + size.height - 30
+        imgView.frame = imgFrame
+    
+        var headerViewFrame = headerView.frame
+        
+        if model!.isImageExist {
+            
+            imgView.hidden = false
+            imgView.image = model!.image
+            
+            headerViewFrame = CGRect(x: 0, y: 0, width: kScreenWidth, height: size.height + 60 + kScreenWidth - 200 + 5)
+        }else{
+            imgView.hidden = true
+            headerViewFrame = CGRect(x: 0, y: 0, width: kScreenWidth, height: size.height + 60)
+        }
+        
+        headerView.frame = headerViewFrame
+        
+        let lineView = UIView(frame: CGRect(x: 0, y: headerViewFrame.height - 5, width: kScreenWidth, height: 5))
+        lineView.backgroundColor = UIColor.orangeColor()
+        headerView.addSubview(lineView)
+    
+        self.tableView?.tableHeaderView = headerView
         
         self.inPutView = UIView(frame: CGRect(x: 0, y: kScreenHeight - 49 - 64, width: kScreenWidth, height: 49))
         self.inPutView?.backgroundColor = UIColor.grayColor()
@@ -161,7 +220,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         
 
         let user = AVUser.currentUser()
-        user.addUniqueObject(self.postId!, forKey: "myCollection")
+        user.addUniqueObject(model!.postId, forKey: "myCollection")
 //        user.addObjectsFromArray( forKey: "myCollection")
         
         user.saveInBackgroundWithBlock { (succeeded:Bool, error:NSError!) -> Void in
@@ -180,7 +239,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         let textView = self.inPutView?.viewWithTag(101) as! UITextView
         textView.resignFirstResponder()
 
-        let post = AVObject(withoutDataWithClassName: "Post", objectId: self.postId)
+        let post = AVObject(withoutDataWithClassName: "Post", objectId: model!.postId)
         let myComment = AVObject(className: "Comment")
         myComment.setObject(textView.text, forKey: "comment")
         myComment.setObject(post, forKey: "post")

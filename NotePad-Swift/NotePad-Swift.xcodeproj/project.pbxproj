@@ -365,7 +365,7 @@
 		D74A1E8D1C2FDEC600310F66 /* titlebar_button_back_9.png in Resources */ = {isa = PBXBuildFile; fileRef = D74A1D7C1C2FDEC600310F66 /* titlebar_button_back_9.png */; };
 		D74A1E8E1C2FDEC600310F66 /* titlebar_button_back_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D74A1D7D1C2FDEC600310F66 /* titlebar_button_back_9@2x.png */; };
 		D74A1E911C2FDF0900310F66 /* FiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74A1E901C2FDF0900310F66 /* FiveViewController.swift */; };
-		D74A1E931C2FDF4000310F66 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74A1E921C2FDF4000310F66 /* CommonViewController.swift */; };
+		D74A1E931C2FDF4000310F66 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74A1E921C2FDF4000310F66 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -771,7 +771,7 @@
 		D74A1D7C1C2FDEC600310F66 /* titlebar_button_back_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titlebar_button_back_9.png; sourceTree = "<group>"; };
 		D74A1D7D1C2FDEC600310F66 /* titlebar_button_back_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "titlebar_button_back_9@2x.png"; sourceTree = "<group>"; };
 		D74A1E901C2FDF0900310F66 /* FiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiveViewController.swift; sourceTree = "<group>"; };
-		D74A1E921C2FDF4000310F66 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		D74A1E921C2FDF4000310F66 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1015,7 +1015,7 @@
 		D74A18651C2FDAE300310F66 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D74A1E921C2FDF4000310F66 /* CommonViewController.swift */,
+				D74A1E921C2FDF4000310F66 /* Common.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1881,7 +1881,7 @@
 				5A42B63C1C3D05E000ABE789 /* SendPostController.swift in Sources */,
 				5A89EE311C3DFEBA0073ED51 /* MJRefreshGifHeader.m in Sources */,
 				D74A187C1C2FDDDA00310F66 /* LaunchViewController.swift in Sources */,
-				D74A1E931C2FDF4000310F66 /* CommonViewController.swift in Sources */,
+				D74A1E931C2FDF4000310F66 /* Common.swift in Sources */,
 				5A993C901C3A404100AEB89E /* ChannelViewController.swift in Sources */,
 				5ADA6E891C35146A00730E5A /* TADotView.m in Sources */,
 				D74A18721C2FDCE900310F66 /* ThreeViewController.swift in Sources */,

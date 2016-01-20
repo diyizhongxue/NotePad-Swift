@@ -226,7 +226,7 @@ class MyCollectionPostController: UIViewController, UITableViewDelegate, UITable
         let model:OneModel = self.myCollectionArray[indexPath.row] as! OneModel
         //评论
         let vc = DetailCommentController()
-        vc.postId = model.postId
+        vc.model = model
         //隐藏 tabBar
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
