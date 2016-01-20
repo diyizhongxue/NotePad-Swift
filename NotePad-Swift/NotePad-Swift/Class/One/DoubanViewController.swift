@@ -22,6 +22,8 @@ import UIKit
 import MediaPlayer
 import QuartzCore
 
+let 频道列表 = "http://www.douban.com/j/app/radio/channels"
+let 歌曲列表 = "http://douban.fm/j/mine/playlist?channel=0"
 
 class DoubanViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HttpProtocolDelegate, ChannelDelegate {
 
