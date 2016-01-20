@@ -24,11 +24,15 @@ navigationItem
 
 NSDate
 
+UIAlertController
+UIAlertView
+UIActionSheet
+
 */
 
 import UIKit
 
-class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SDCycleScrollViewDelegate{
+class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SDCycleScrollViewDelegate, UIAlertViewDelegate, UIActionSheetDelegate{
 
     let cellId = "homeCell"
 
@@ -285,17 +289,115 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     //MARK: 点击 轮播图
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
         
-        print("\(index)")
-        if index == 0{
-        
+        switch index{
+            
+        case 0:
             let storyboard = UIStoryboard(name: "Douban", bundle: NSBundle.mainBundle())
             let douBanVC = storyboard.instantiateViewControllerWithIdentifier("DoubanViewController")
             douBanVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(douBanVC, animated: true)
+        case 1:
+
+                if #available(iOS 8.0, *) {
+                    //1, 创建控件  包含： 主题 信息 样式
+                    let alertController = UIAlertController(title: "Alert", message: "第二项", preferredStyle: .Alert)
+                    
+                    let showBtn = UIAlertAction(title: "show", style: .Destructive, handler: { (action:UIAlertAction) -> Void in
+                        
+                        print("并不会执行")
+                    })
+                    showBtn.enabled = false
+                    alertController.addAction(showBtn)
+
+                    
+                    //2, 创建按钮 取消样式UIAlertActionStyleCancel
+                    let cancelBtn = UIAlertAction(title: "cancel", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
+                        
+                        print("UIAlertController---cancel")
+                    })
+                    alertController.addAction(cancelBtn)
+                   
+                    let sureBtn = UIAlertAction(title: "sure", style: .Destructive, handler: { (action:UIAlertAction) -> Void in
+                        
+                        print("UIAlertController---sure")
+                    })
+                    alertController.addAction(sureBtn)
+                    //3, 添加 UITextField  只有alertView可以添加 actionSheet不能添加 需要判断
+                    if alertController.preferredStyle == .Alert{
+                    
+                        alertController.addTextFieldWithConfigurationHandler({ (textField:UITextField) -> Void in
+                            
+                            textField.placeholder = "请输入用户名"
+                            textField.textAlignment = .Center
+                        })
+                        alertController.addTextFieldWithConfigurationHandler({ (textField:UITextField) -> Void in
+                            
+                            textField.placeholder = "请输入用户名"
+                            textField.textAlignment = .Center
+                            textField.secureTextEntry = true
+                            //背景不好看
+                            textField.backgroundColor = UIColor.grayColor()
+                            //改变输入框的 大小
+                            textField.font = UIFont.systemFontOfSize(20)
+                        })
+                    }
+                    //4，模态视图 方式显示出来
+                    self.presentViewController(alertController, animated: true, completion: { () -> Void in
+                    })
+                    
+                } else {
+                    let alertView = UIAlertView(title: "第二", message: "第二项", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+                    alertView.show()
+                }
+
+        case 2:
+            
+            if #available(iOS 8.0, *) {
+                let alertController = UIAlertController(title: "ActionSheet", message: "第二项", preferredStyle: .ActionSheet)
+                
+                let showBtn = UIAlertAction(title: "show", style: .Destructive, handler: { (action:UIAlertAction) -> Void in
+                    
+                    print("并不会执行")
+                })
+                showBtn.enabled = false
+                alertController.addAction(showBtn)
+                let cancelBtn = UIAlertAction(title: "cancel", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
+                    
+                    print("UIAlertController---cancel")
+                })
+                alertController.addAction(cancelBtn)
+                
+                let sureBtn = UIAlertAction(title: "sure", style: .Destructive, handler: { (action:UIAlertAction) -> Void in
+                    
+                    print("UIAlertController---sure")
+                })
+                alertController.addAction(sureBtn)
+                //4，模态视图 方式显示出来
+                self.presentViewController(alertController, animated: true, completion: { () -> Void in
+                })
+
+            } else {
+                let actionSheet = UIActionSheet(title: "actionSheet", delegate: self, cancelButtonTitle: "cencel", destructiveButtonTitle: "sure", otherButtonTitles: "other")
+                actionSheet.showInView(self.view)
+            
+            }
+        default:
+            break
         }
 
         
     }
+    //MARK: -UIAlertViewDelegate
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+    
+        print(buttonIndex)
+    }
+    //MARK: -UIActionSheetDelegate
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int){
+        print(buttonIndex)
+
+    }
+    
     
     //MARK:-计算字符串高度
     func captureTextSizeWithText(text:NSString, textWidth width:CGFloat, font:String)->CGSize{
