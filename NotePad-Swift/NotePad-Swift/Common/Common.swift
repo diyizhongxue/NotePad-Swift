@@ -34,6 +34,7 @@ let app_build = infoDictionary.objectForKey("CFBundleVersion")
 
 class Common: NSObject {
     
+    //计算字符串的size
     class func captureTextSizeWithText(text:NSString, textWidth width:CGFloat, font:String)->CGSize{
         
         let constraint = CGSize(width: width, height: 20000.0)
