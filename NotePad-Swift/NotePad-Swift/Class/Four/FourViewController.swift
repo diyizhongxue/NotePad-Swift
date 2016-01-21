@@ -9,21 +9,19 @@
 import UIKit
 
 class FourViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+   
     var tableView:UITableView?
-    var nameArray:NSArray?
-    
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        super.viewWillAppear(true)
-        nameArray = ["OC示例", "二维码", "地图", "电话，短信，邮件", "谓词搜索","新功能6", "新功能7", "新功能8", "新功能9", "新功能10"];
-        
-    }
+    var searchController:UISearchDisplayController?
+
+    var oldData:NSArray?
+    var newData:NSArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "发现"
+        
+        oldData = ["OC示例", "二维码", "地图", "电话，短信，邮件", "hahaha","新功能6", "新功能7", "新功能8", "新功能9", "新功能10"];
+        
         creatViews()
         
         
@@ -35,12 +33,28 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView?.dataSource = self
         self.view.addSubview(self.tableView!)
         
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 44))
+        searchBar.placeholder = "搜索"
+        self.tableView?.tableHeaderView = searchBar
+        
+        searchController = UISearchDisplayController(searchBar: searchBar, contentsController: self)
+        searchController?.searchResultsDataSource = self
+        searchController?.searchResultsDelegate = self
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return (nameArray?.count)!
-    }
+        if tableView == self.tableView{
+            return (oldData?.count)!
+            
+        }else{
+            //谓词其他搜索样式  百度一下
+            let predicate = NSPredicate(format: "self contains [cd] %@", (searchController?.searchBar.text)!)
+            newData = NSArray(array: (oldData?.filteredArrayUsingPredicate(predicate))!)
+            
+            return (newData?.count)!
+        }    }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellId = "cellId"
@@ -50,8 +64,12 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
         }
         
-        cell?.textLabel?.text = nameArray![indexPath.row] as? String
-
+        if tableView == self.tableView{
+            cell?.textLabel?.text = oldData![indexPath.row] as? String
+        }else{
+            cell?.textLabel?.text = newData![indexPath.row] as? String
+        }
+        
         return cell!
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -74,12 +92,9 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
                 break
             case 3:
                 //"电话，短信，邮件"
-
   
                 break
             case 4:
-                //"谓词搜索"
-                self.navigationController?.pushViewController(PredicateViewController(), animated: true)
                 
                 break
             case 5:
