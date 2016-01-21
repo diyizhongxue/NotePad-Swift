@@ -275,7 +275,7 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
  
         let model = self.dataArray[indexPath.row] as! OneModel
-        let size = captureTextSizeWithText(model.content, textWidth: kScreenWidth - 60, font: "15")
+        let size = Common.captureTextSizeWithText(model.content, textWidth: kScreenWidth - 60, font: "15")
         if model.isImageExist {
 
             return size.height + 60 + kScreenWidth - 200 + 5
@@ -395,32 +395,6 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int){
         print(buttonIndex)
 
-    }
-    
-    //MARK:-计算字符串高度
-    func captureTextSizeWithText(text:NSString, textWidth width:CGFloat, font:String)->CGSize{
-        
-        let constraint = CGSize(width: width, height: 20000.0)
-        let tdic = [font:NSFontAttributeName]
-        let rect = text.boundingRectWithSize(constraint, options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: tdic, context: nil)
-        
-        var size:CGSize
-        if rect.size.height < 15{
-            size = CGSizeMake(kScreenWidth - 50, rect.size.height)
-            
-        }else if rect.size.height > 15 && rect.size.height < 30{
-            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 10)
-            
-        }else{
-            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
-        }
-        
-        if text.isEqualToString(""){
-            size = CGSizeZero
-        }
-        
-        return size
-        
     }
 
     override func didReceiveMemoryWarning() {

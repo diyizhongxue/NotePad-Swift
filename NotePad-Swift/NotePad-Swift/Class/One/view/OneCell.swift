@@ -28,7 +28,7 @@ class OneCell: UITableViewCell {
             self.creatTimtLabel?.text = model.time
             self.contentLabel?.text = model.content
             self.contentLabel?.numberOfLines = 0
-            let size = captureTextSizeWithText(model.content, textWidth: kScreenWidth - 60, font: "15")
+            let size = Common.captureTextSizeWithText(model.content, textWidth: kScreenWidth - 60, font: "15")
             self.contentLabel?.frame.size = size
             
             var imgFrame = self.imgView?.frame
@@ -106,29 +106,6 @@ class OneCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    func captureTextSizeWithText(text:NSString, textWidth width:CGFloat, font:String)->CGSize{
-        
-        let constraint = CGSize(width: width, height: 20000.0)
-        let tdic = [font:NSFontAttributeName]
-        let rect = text.boundingRectWithSize(constraint, options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: tdic, context: nil)
-
-        var size:CGSize
-        if rect.size.height < 15{
-            size = CGSizeMake(kScreenWidth - 50, rect.size.height)
-
-        }else if rect.size.height > 15 && rect.size.height < 30{
-            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 10)
-
-        }else{
-            size = CGSizeMake(kScreenWidth - 50, rect.size.height + 20)
-        }
-        
-        if text.isEqualToString(""){
-            size = CGSizeZero
-        }
-        return size
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
