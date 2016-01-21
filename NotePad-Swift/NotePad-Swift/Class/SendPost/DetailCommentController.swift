@@ -138,7 +138,6 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         headerView.addSubview(icon)
         
         let nameLabel = UILabel(frame: CGRect(x: 40, y: 5, width: 100, height: 30))
-        nameLabel.text = "游客用户"
         nameLabel.font = UIFont.systemFontOfSize(12)
         headerView.addSubview(nameLabel)
         
@@ -156,8 +155,10 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         imgView.backgroundColor = UIColor.redColor()
         headerView.addSubview(imgView)
         
-        if model!.name.isEmpty{
+        if !model!.name.isEmpty{
             nameLabel.text = model!.name
+        }else{
+            nameLabel.text = "游客用户"
         }
         creatTimtLabel.text = model!.time
         contentLabel.text = model!.content
