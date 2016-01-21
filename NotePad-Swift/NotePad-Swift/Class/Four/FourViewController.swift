@@ -17,7 +17,7 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(true)
-        nameArray = ["OC示例", "二维码", "地图", "电话，短信，邮件", "新功能6","新功能6", "新功能7", "新功能8", "新功能9", "新功能10"];
+        nameArray = ["OC示例", "二维码", "地图", "电话，短信，邮件", "谓词搜索","新功能6", "新功能7", "新功能8", "新功能9", "新功能10"];
         
     }
     
@@ -55,24 +55,31 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell!
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-                 //已经登录
             switch indexPath.row{
     
             case 0:
+                //OC示例
                 let listOneCol = ListOneController()
                 self.navigationController?.pushViewController(listOneCol, animated: true)
                 
                 break
             case 1:
-                
+                //"二维码"
+
                 break
             case 2:
+                //"地图"
+
                 
                 break
             case 3:
-                
+                //"电话，短信，邮件"
+
+  
                 break
             case 4:
+                //"谓词搜索"
+                self.navigationController?.pushViewController(PredicateViewController(), animated: true)
                 
                 break
             case 5:
