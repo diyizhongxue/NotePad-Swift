@@ -86,7 +86,15 @@ class LaunchViewController: UIViewController {
         let tap = UITapGestureRecognizer(target:self, action:"imageAction")
         imageView.addGestureRecognizer(tap)
         
-        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector:"showMainView", userInfo: nil, repeats: false)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 200, width: kScreenWidth, height: 100))
+        label.text = "如果用OC，可以先看看ListOneController怎么用的"
+        label.backgroundColor = UIColor.whiteColor()
+        label.numberOfLines = 0;
+        imageView.addSubview(label)
+        
+        
+        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector:"showMainView", userInfo: nil, repeats: false)
     }
     
     //立即进入按钮
