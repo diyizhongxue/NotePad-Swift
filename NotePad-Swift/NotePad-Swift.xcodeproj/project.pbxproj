@@ -51,6 +51,7 @@
 		5AAD0E711C4CF5AB002ED9A4 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD0E6F1C4CF5AB002ED9A4 /* MyPostViewController.swift */; };
 		5AAD0E741C4CF5F5002ED9A4 /* qidongye.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAD0E731C4CF5F5002ED9A4 /* qidongye.png */; };
 		5AAD0E7A1C4D0259002ED9A4 /* MyCollectionPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD0E791C4D0259002ED9A4 /* MyCollectionPostController.swift */; };
+		5ABE854D1C509B2A00DD14D1 /* ListOneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE854C1C509B2A00DD14D1 /* ListOneController.m */; };
 		5ADA6E851C35146A00730E5A /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E781C35146A00730E5A /* SDCollectionViewCell.m */; };
 		5ADA6E861C35146A00730E5A /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E7A1C35146A00730E5A /* SDCycleScrollView.m */; };
 		5ADA6E871C35146A00730E5A /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E7C1C35146A00730E5A /* TAAbstractDotView.m */; };
@@ -442,6 +443,8 @@
 		5AAD0E6F1C4CF5AB002ED9A4 /* MyPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
 		5AAD0E731C4CF5F5002ED9A4 /* qidongye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qidongye.png; sourceTree = "<group>"; };
 		5AAD0E791C4D0259002ED9A4 /* MyCollectionPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionPostController.swift; sourceTree = "<group>"; };
+		5ABE854B1C509B2A00DD14D1 /* ListOneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOneController.h; sourceTree = "<group>"; };
+		5ABE854C1C509B2A00DD14D1 /* ListOneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOneController.m; sourceTree = "<group>"; };
 		5ADA6E771C35146A00730E5A /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
 		5ADA6E781C35146A00730E5A /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
 		5ADA6E791C35146A00730E5A /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
@@ -1045,6 +1048,8 @@
 			isa = PBXGroup;
 			children = (
 				D74A18751C2FDD5500310F66 /* FourViewController.swift */,
+				5ABE854B1C509B2A00DD14D1 /* ListOneController.h */,
+				5ABE854C1C509B2A00DD14D1 /* ListOneController.m */,
 			);
 			path = Four;
 			sourceTree = "<group>";
@@ -1865,6 +1870,7 @@
 				5A89EE361C3DFEBA0073ED51 /* UIScrollView+MJRefresh.m in Sources */,
 				D74A186E1C2FDCD100310F66 /* OneViewController.swift in Sources */,
 				5A89EE331C3DFEBA0073ED51 /* MJRefreshLegendFooter.m in Sources */,
+				5ABE854D1C509B2A00DD14D1 /* ListOneController.m in Sources */,
 				5A89EE321C3DFEBA0073ED51 /* MJRefreshHeader.m in Sources */,
 				D74A18391C2F640C00310F66 /* ViewController.swift in Sources */,
 				5A42B6401C3D205F00ABE789 /* DetailCommentController.swift in Sources */,

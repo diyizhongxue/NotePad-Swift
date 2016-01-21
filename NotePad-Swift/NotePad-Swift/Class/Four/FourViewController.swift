@@ -10,14 +10,14 @@ import UIKit
 
 class FourViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var tableView:UITableView?
-
+    var nameArray:NSArray?
     
     
     
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(true)
-        
+        nameArray = ["OC示例", "二维码", "地图", "电话，短信，邮件", "新功能6","新功能6", "新功能7", "新功能8", "新功能9", "新功能10"];
         
     }
     
@@ -39,7 +39,7 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return (nameArray?.count)!
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -50,8 +50,8 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
         }
         
-        cell?.textLabel?.text = "新功能\(indexPath.row)"
-        
+        cell?.textLabel?.text = nameArray![indexPath.row] as? String
+
         return cell!
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -59,6 +59,8 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
             switch indexPath.row{
     
             case 0:
+                let listOneCol = ListOneController()
+                self.navigationController?.pushViewController(listOneCol, animated: true)
                 
                 break
             case 1:
