@@ -291,10 +291,12 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         switch index{
             
         case 0:
+            
             let storyboard = UIStoryboard(name: "Douban", bundle: NSBundle.mainBundle())
             let douBanVC = storyboard.instantiateViewControllerWithIdentifier("DoubanViewController")
             douBanVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(douBanVC, animated: true)
+            
         case 1:
 
                 if #available(iOS 8.0, *) {

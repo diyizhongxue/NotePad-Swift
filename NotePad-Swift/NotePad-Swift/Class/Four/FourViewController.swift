@@ -8,8 +8,9 @@
 
 import UIKit
 
-class FourViewController: UIViewController{
-    
+class FourViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    var tableView:UITableView?
+
     
     
     
@@ -29,7 +30,67 @@ class FourViewController: UIViewController{
     }
     
     func creatViews(){
+        self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight))
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        self.view.addSubview(self.tableView!)
         
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 10
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cellId = "cellId"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId)
+        if (cell == nil) {
+            
+            cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
+        }
+        
+        cell?.textLabel?.text = "新功能\(indexPath.row)"
+        
+        return cell!
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+                 //已经登录
+            switch indexPath.row{
+    
+            case 0:
+                
+                break
+            case 1:
+                
+                break
+            case 2:
+                
+                break
+            case 3:
+                
+                break
+            case 4:
+                
+                break
+            case 5:
+                
+                break
+            case 6:
+                
+                break
+            case 7:
+                
+                break
+            case 8:
+                
+                break
+            case 9:
+                
+                break
+            default:
+                break
+            }
         
     }
     

@@ -56,7 +56,6 @@ class Common: NSObject {
         }
         return size
     }
-    
 }
 /*
 所有 tag
@@ -65,6 +64,9 @@ tag ＝ 0 1 2 3 4 tabBarItem
 tag ＝ 101 写评论内容的 UITextView
 
 
+
+/usr/local/lib/node_modules
+/usr/local/lib
 
 
 
