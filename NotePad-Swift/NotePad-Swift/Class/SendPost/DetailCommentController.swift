@@ -85,7 +85,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         page = 1
 
         // 按发帖时间降序排列
-        query.orderByDescending("createdAt")
+//        query.orderByDescending("createdAt")
         query.whereKey("post", equalTo: post)
         query.findObjectsInBackgroundWithBlock { (array:[AnyObject]!, error:NSError!) -> Void in
            
@@ -107,7 +107,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         query.limit = 10; // 最多返回 10 条结果
         query.skip = 10 * page; // 跳过前 10 条结果
         // 按发帖时间降序排列
-        query.orderByDescending("createdAt")
+//        query.orderByDescending("createdAt")
         query.whereKey("post", equalTo: post)
         query.findObjectsInBackgroundWithBlock { (array:[AnyObject]!, error:NSError!) -> Void in
             
