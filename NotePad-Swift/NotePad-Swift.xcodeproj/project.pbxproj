@@ -23,6 +23,7 @@
 		5A2AAD971C609198009230FD /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD941C609198009230FD /* ChannelViewController.swift */; };
 		5A2AAD981C609198009230FD /* Douban.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AAD951C609198009230FD /* Douban.storyboard */; };
 		5A2AAD991C609198009230FD /* DoubanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD961C609198009230FD /* DoubanViewController.swift */; };
+		5A2AAD9B1C609BE0009230FD /* 方正行楷_GBK.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AAD9A1C609BE0009230FD /* 方正行楷_GBK.ttf */; };
 		5A3A1F661C3F42AD006D8C4C /* OneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A1F651C3F42AD006D8C4C /* OneCell.swift */; };
 		5A3A1F691C3F510B006D8C4C /* OneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A1F681C3F510B006D8C4C /* OneModel.swift */; };
 		5A42B62F1C3CB02700ABE789 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B62E1C3CB02700ABE789 /* RegisterController.swift */; };
@@ -409,6 +410,7 @@
 		5A2AAD941C609198009230FD /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		5A2AAD951C609198009230FD /* Douban.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Douban.storyboard; sourceTree = "<group>"; };
 		5A2AAD961C609198009230FD /* DoubanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubanViewController.swift; sourceTree = "<group>"; };
+		5A2AAD9A1C609BE0009230FD /* 方正行楷_GBK.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正行楷_GBK.ttf"; sourceTree = "<group>"; };
 		5A3A1F651C3F42AD006D8C4C /* OneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCell.swift; sourceTree = "<group>"; };
 		5A3A1F681C3F510B006D8C4C /* OneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneModel.swift; sourceTree = "<group>"; };
 		5A42B62E1C3CB02700ABE789 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -1017,6 +1019,7 @@
 		D74A182A1C2F640C00310F66 = {
 			isa = PBXGroup;
 			children = (
+				5A2AAD9A1C609BE0009230FD /* 方正行楷_GBK.ttf */,
 				5A05AC971C3B897500FF26C2 /* CoreLocation.framework */,
 				5A05AC951C3B896B00FF26C2 /* CoreTelephony.framework */,
 				5A05AC931C3B895F00FF26C2 /* MobileCoreServices.framework */,
@@ -1763,6 +1766,7 @@
 				D74A1DE51C2FDEC600310F66 /* feature_group_btn_bg@2x.png in Resources */,
 				D74A1DB71C2FDEC600310F66 /* channel_sectionbar.png in Resources */,
 				D74A1D971C2FDEC600310F66 /* button_icon_back@2x.png in Resources */,
+				5A2AAD9B1C609BE0009230FD /* 方正行楷_GBK.ttf in Resources */,
 				D74A1DAD1C2FDEC600310F66 /* button_m@2x.png in Resources */,
 				5A89EE2B1C3DFEBA0073ED51 /* 6.jpg in Resources */,
 				D74A1DA01C2FDEC600310F66 /* button_icon_refresh.png in Resources */,
