@@ -20,7 +20,7 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         self.title = "发现"
         
-        oldData = ["OC示例", "二维码", "地图", "电话，短信，邮件", "hahaha","新功能6", "新功能7", "新功能8", "新功能9", "新功能10"];
+        oldData = ["OC示例", "二维码", "地图", "电话，短信，邮件", "好书","新功能6", "新功能7", "新功能8", "新功能9", "新功能10"];
         
         creatViews()
         
@@ -87,7 +87,6 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
                 break
             case 2:
                 //"地图"
-
                 
                 break
             case 3:
@@ -95,6 +94,8 @@ class FourViewController: UIViewController, UITableViewDelegate, UITableViewData
   
                 break
             case 4:
+                //好书 跳转另一个tabBarController
+                self.view.window?.rootViewController = GBTabBarController()
                 
                 break
             case 5:
