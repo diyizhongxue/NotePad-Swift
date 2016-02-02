@@ -1,5 +1,5 @@
 //
-//  CircleViewController.swift
+//  PushNewBookController.swift
 //  NotePad-Swift
 //
 //  Created by 王立震 on 16/2/2.
@@ -8,21 +8,29 @@
 
 import UIKit
 
-class CircleViewController: UIViewController {
+class PushNewBookController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
-        self.setNavBar()
 
+        self.view.backgroundColor = UIColor.orangeColor()
     }
-    func setNavBar(){
     
+    func colse(){
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
+    }
+    func sure(){
+        
+       print("sure")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

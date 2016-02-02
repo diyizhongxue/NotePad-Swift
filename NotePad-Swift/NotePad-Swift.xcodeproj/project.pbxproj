@@ -24,6 +24,7 @@
 		5A2AAD981C609198009230FD /* Douban.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AAD951C609198009230FD /* Douban.storyboard */; };
 		5A2AAD991C609198009230FD /* DoubanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD961C609198009230FD /* DoubanViewController.swift */; };
 		5A2AAD9B1C609BE0009230FD /* 方正行楷_GBK.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AAD9A1C609BE0009230FD /* 方正行楷_GBK.ttf */; };
+		5A2AADDC1C60A8ED009230FD /* PushNewBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AADDB1C60A8ED009230FD /* PushNewBookController.swift */; };
 		5A3A1F661C3F42AD006D8C4C /* OneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A1F651C3F42AD006D8C4C /* OneCell.swift */; };
 		5A3A1F691C3F510B006D8C4C /* OneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A1F681C3F510B006D8C4C /* OneModel.swift */; };
 		5A42B62F1C3CB02700ABE789 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B62E1C3CB02700ABE789 /* RegisterController.swift */; };
@@ -411,6 +412,7 @@
 		5A2AAD951C609198009230FD /* Douban.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Douban.storyboard; sourceTree = "<group>"; };
 		5A2AAD961C609198009230FD /* DoubanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubanViewController.swift; sourceTree = "<group>"; };
 		5A2AAD9A1C609BE0009230FD /* 方正行楷_GBK.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正行楷_GBK.ttf"; sourceTree = "<group>"; };
+		5A2AADDB1C60A8ED009230FD /* PushNewBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNewBookController.swift; sourceTree = "<group>"; };
 		5A3A1F651C3F42AD006D8C4C /* OneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCell.swift; sourceTree = "<group>"; };
 		5A3A1F681C3F510B006D8C4C /* OneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneModel.swift; sourceTree = "<group>"; };
 		5A42B62E1C3CB02700ABE789 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -836,11 +838,11 @@
 		5A2AAD811C60895F009230FD /* GoodBook */ = {
 			isa = PBXGroup;
 			children = (
-				5A2AAD841C608ACB009230FD /* circle */,
-				5A2AAD851C608ACB009230FD /* more */,
-				5A2AAD861C608ACB009230FD /* push */,
 				5A2AAD871C608ACB009230FD /* rank */,
 				5A2AAD881C608ACB009230FD /* search */,
+				5A2AAD861C608ACB009230FD /* push */,
+				5A2AAD841C608ACB009230FD /* circle */,
+				5A2AAD851C608ACB009230FD /* more */,
 				5A2AAD821C6089CB009230FD /* GBTabBarController.swift */,
 			);
 			path = GoodBook;
@@ -866,6 +868,7 @@
 			isa = PBXGroup;
 			children = (
 				5A2AAD8D1C608B10009230FD /* PushViewController.swift */,
+				5A2AADDB1C60A8ED009230FD /* PushNewBookController.swift */,
 			);
 			path = push;
 			sourceTree = "<group>";
@@ -1088,7 +1091,6 @@
 				D74A18671C2FDC9000310F66 /* Base */,
 				D74A186A1C2FDC9000310F66 /* One */,
 				D74A186C1C2FDC9000310F66 /* Two */,
-				D74A186B1C2FDC9000310F66 /* Three */,
 				D74A18681C2FDC9000310F66 /* Four */,
 				D74A1E8F1C2FDEFB00310F66 /* Five */,
 			);
@@ -1145,6 +1147,7 @@
 		D74A186A1C2FDC9000310F66 /* One */ = {
 			isa = PBXGroup;
 			children = (
+				D74A186B1C2FDC9000310F66 /* Three */,
 				5A3A1F671C3F50EE006D8C4C /* model */,
 				5A89EE381C3E663F0073ED51 /* view */,
 				D74A186D1C2FDCD100310F66 /* OneViewController.swift */,
@@ -1157,7 +1160,8 @@
 			children = (
 				D74A18711C2FDCE900310F66 /* ThreeViewController.swift */,
 			);
-			path = Three;
+			name = Three;
+			path = ../Three;
 			sourceTree = "<group>";
 		};
 		D74A186C1C2FDC9000310F66 /* Two */ = {
@@ -1957,6 +1961,7 @@
 				5A42B6401C3D205F00ABE789 /* DetailCommentController.swift in Sources */,
 				5A2AAD991C609198009230FD /* DoubanViewController.swift in Sources */,
 				D74A18761C2FDD5500310F66 /* FourViewController.swift in Sources */,
+				5A2AADDC1C60A8ED009230FD /* PushNewBookController.swift in Sources */,
 				5A89EE341C3DFEBA0073ED51 /* MJRefreshLegendHeader.m in Sources */,
 				D74A18371C2F640C00310F66 /* AppDelegate.swift in Sources */,
 				5A89EE2E1C3DFEBA0073ED51 /* MJRefreshConst.m in Sources */,

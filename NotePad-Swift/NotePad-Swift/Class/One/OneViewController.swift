@@ -216,23 +216,15 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         headerView.addSubview(cycleScrollView)
         self.tableView?.tableHeaderView = headerView
         
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
-        btn.setTitle("发帖子", forState: .Normal)
-        btn.backgroundColor = UIColor.greenColor()
-        btn.addTarget(self, action: "sendPost:", forControlEvents: .TouchUpInside)
-//        self.navigationController?.navigationBar.addSubview(btn)
-        let item = UIBarButtonItem(customView: btn)
-        self.navigationItem.leftBarButtonItem = item
+        Common.addNavLeftBtn(self, btnTitle: "发帖子")
     }
-    
-    func sendPost(btn:UIButton){
-        
+    func goBack(){
         let sendPostCol = UINavigationController(rootViewController: SendPostController())
         self.presentViewController(sendPostCol, animated: true) { () -> Void in
             
         }
-
     }
+
     
     //MARK: UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{

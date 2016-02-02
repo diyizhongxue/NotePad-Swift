@@ -22,31 +22,29 @@ class RankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.orangeColor()
+        self.view.backgroundColor = UIColor.whiteColor()
         
         
         let label = UILabel(frame: CGRect(x: 0, y: 50, width: 300, height: 50))
         label.textAlignment = .Center
         label.text = "哈哈哈哈哈哈"
         label.textColor = UIColor.redColor()
-        label.font = UIFont(name: "FZXingKai-S04", size: 18)
+        label.font = UIFont(name: MY_FONT, size: 18)
         self.view.addSubview(label)
         
-        
-        
-        
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
-        btn.setTitle("返回", forState: .Normal)
-        btn.backgroundColor = UIColor.greenColor()
-        btn.addTarget(self, action: "goBack:", forControlEvents: .TouchUpInside)
-        let item = UIBarButtonItem(customView: btn)
-        self.navigationItem.leftBarButtonItem = item
+        Common.addNavLeftBtn(self, btnTitle: "返回")
+        Common.addNavRightBtn(self, btnTitle: "确定")
+
     }
     
-    func goBack(btn:UIButton){
+    func goBack(){
         let tabBarCol =  TabBarController()
         tabBarCol.selectedIndex = 3
         self.view.window?.rootViewController = tabBarCol
+    }
+    func makeSure(){
+        print("makeSure")
+
     }
 
     override func didReceiveMemoryWarning() {

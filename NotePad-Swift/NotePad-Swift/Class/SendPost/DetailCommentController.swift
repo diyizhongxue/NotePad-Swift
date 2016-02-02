@@ -202,38 +202,32 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         textView.backgroundColor = UIColor.redColor()
         self.inPutView?.addSubview(textView)
         
+        
         let btn = UIButton(frame: CGRect(x: kScreenWidth - 50, y: 5, width: 45, height: 40))
         btn.backgroundColor = UIColor.greenColor()
         btn.setTitle("发送", forState: .Normal)
         btn.addTarget(self, action: "sendComment:", forControlEvents: .TouchUpInside)
         self.inPutView?.addSubview(btn)
         
-        let collectionBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
-        collectionBtn.setTitle("收藏", forState: .Normal)
-        collectionBtn.backgroundColor = UIColor.greenColor()
-        collectionBtn.addTarget(self, action: "collectionBtn:", forControlEvents: .TouchUpInside)
-        //        self.navigationController?.navigationBar.addSubview(btn)
-        let item = UIBarButtonItem(customView: collectionBtn)
-        self.navigationItem.rightBarButtonItem = item
+        Common.addNavRightBtn(self, btnTitle: "收藏")
     }
+    func makeSure(){
     
-    func collectionBtn(btn:UIButton){
-        
-
         let user = AVUser.currentUser()
         user.addUniqueObject(model!.postId, forKey: "myCollection")
-//        user.addObjectsFromArray( forKey: "myCollection")
+        //        user.addObjectsFromArray( forKey: "myCollection")
         
         user.saveInBackgroundWithBlock { (succeeded:Bool, error:NSError!) -> Void in
             if succeeded{
-            
+                
                 print("收藏成功")
             }else{
-            
+                
             }
             
         }
     }
+
     
     func sendComment(btn:UIButton){
         

@@ -45,19 +45,11 @@ class FiveViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView?.dataSource = self
         self.view.addSubview(self.tableView!)
         
-        let settingBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
-        settingBtn.setTitle("设置", forState: .Normal)
-        settingBtn.backgroundColor = UIColor.greenColor()
-        settingBtn.addTarget(self, action: "settingBtn:", forControlEvents: .TouchUpInside)
-        //        self.navigationController?.navigationBar.addSubview(btn)
-        let item = UIBarButtonItem(customView: settingBtn)
-        self.navigationItem.rightBarButtonItem = item
+        Common.addNavRightBtn(self, btnTitle: "设置")
     }
-    
-    func settingBtn(btn:UIButton){
-        
+    func makeSure(){
         self.navigationController?.pushViewController(SettingViewController(), animated: true)
-        
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

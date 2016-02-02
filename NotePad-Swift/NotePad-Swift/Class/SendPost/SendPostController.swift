@@ -32,14 +32,8 @@ class SendPostController: UIViewController, UITextViewDelegate, UIImagePickerCon
     }
     func creatViews(){
         
-        let dismissBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
-        dismissBtn.setTitle("取消", forState: .Normal)
-        dismissBtn.backgroundColor = UIColor.greenColor()
-        dismissBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        dismissBtn.addTarget(self, action: "sendPost:", forControlEvents: .TouchUpInside)
-//        self.navigationController?.navigationBar.addSubview(dismissBtn)
-        let leftItem = UIBarButtonItem(customView: dismissBtn)
-        self.navigationItem.leftBarButtonItem = leftItem
+        Common.addNavLeftBtn(self, btnTitle: "取消")
+        Common.addNavRightBtn(self, btnTitle: "发帖")
     
         self.textView = UITextView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 100))
         self.textView?.backgroundColor = UIColor.whiteColor()
@@ -47,32 +41,19 @@ class SendPostController: UIViewController, UITextViewDelegate, UIImagePickerCon
         self.textView?.text = "请不要少于1个字"
         self.view.addSubview(self.textView!)
         
-        let sureBtn = UIButton(frame: CGRect(x: kScreenWidth - 80, y: 0, width: 80, height: 44))
-        sureBtn.setTitle("发帖", forState: .Normal)
-        sureBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        sureBtn.backgroundColor = UIColor.greenColor()
-        sureBtn.addTarget(self, action: "makeSure:", forControlEvents: .TouchUpInside)
-//        self.navigationController?.navigationBar.addSubview(sureBtn)
-        let rightItem = UIBarButtonItem(customView: sureBtn)
-        self.navigationItem.rightBarButtonItem = rightItem
-        
-        
         imageView = UIImageView(frame: CGRect(x: 0, y: 100, width: 100, height: 100))
         imageView!.image = UIImage(named: "douban.png")
         imageView!.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: "selectImage:")
         imageView!.addGestureRecognizer(tap)
         self.view.addSubview(imageView!)
-
     
     }
-
-    
-    func sendPost(btn:UIButton){
+    func goBack(){
         self.dismissViewControllerAnimated(true) { () -> Void in
         }
     }
-    func makeSure(btn:UIButton){
+    func makeSure(){
         
         let post = AVObject(className: "Post")
 

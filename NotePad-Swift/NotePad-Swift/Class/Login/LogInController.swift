@@ -49,17 +49,9 @@ class LogInController: UIViewController {
         self.view?.addSubview(btn)
         
         
-        let registergBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
-        registergBtn.setTitle("注册", forState: .Normal)
-        registergBtn.backgroundColor = UIColor.greenColor()
-        registergBtn.addTarget(self, action: "registergBtn:", forControlEvents: .TouchUpInside)
-        //        self.navigationController?.navigationBar.addSubview(btn)
-        let item = UIBarButtonItem(customView: registergBtn)
-        self.navigationItem.rightBarButtonItem = item
+        Common.addNavRightBtn(self, btnTitle: "注册")
     }
-    
-    func registergBtn(btn:UIButton){
-        
+    func makeSure(){
         self.navigationController?.pushViewController(RegisterController(), animated: true)
         
     }

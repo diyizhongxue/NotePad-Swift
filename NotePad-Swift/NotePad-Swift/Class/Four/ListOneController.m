@@ -24,6 +24,7 @@
 
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 50)];
     label.text = @"Swift和OC是可以混用的！！别找借口";
+    label.font = [UIFont fontWithName:@"FZXingKai-S04" size:15];
     [self.view addSubview:label];
 }
 
