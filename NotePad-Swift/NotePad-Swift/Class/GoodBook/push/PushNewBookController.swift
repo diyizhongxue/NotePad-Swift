@@ -12,8 +12,16 @@ class PushNewBookController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = UIColor.orangeColor()
+        
+        creatViews()
+    }
+    func creatViews(){
+    
+        let bookTitleView = BookTitleView(frame:CGRect(x: 0, y: 50, width: kScreenWidth, height: 140))
+        bookTitleView.backgroundColor = UIColor.grayColor()
+        self.view.addSubview(bookTitleView)
     }
     
     func colse(){

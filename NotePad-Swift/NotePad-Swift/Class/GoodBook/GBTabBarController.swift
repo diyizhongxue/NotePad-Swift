@@ -36,8 +36,8 @@ class GBTabBarController: UITabBarController {
         
         let item1 = UITabBarItem(tabBarSystemItem: .Favorites, tag: 0)
         let item2 = UITabBarItem(tabBarSystemItem: .Search, tag: 1)
-        let item3 = UITabBarItem(tabBarSystemItem: .MostViewed, tag: 2)
-        let item4 = UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 3)
+        let item3 = UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 2)
+        let item4 = UITabBarItem(tabBarSystemItem: .Recents, tag: 3)
         let item5 = UITabBarItem(tabBarSystemItem: .More, tag: 4)
         
         one.tabBarItem = item1

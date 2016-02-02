@@ -21,7 +21,7 @@ class RankViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "主页"
         self.view.backgroundColor = UIColor.whiteColor()
         
         
