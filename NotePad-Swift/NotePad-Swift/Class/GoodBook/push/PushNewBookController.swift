@@ -121,6 +121,12 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
         //点击变暗再恢复 的动画
         self.tableView?.deselectRowAtIndexPath(indexPath, animated: true)
         
+        var row = indexPath.row
+        if isShowScore && row > 1{
+        
+            row -= 1
+        }
+        
         switch indexPath.row{
             
             case 0:
@@ -130,21 +136,12 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
                 self.giveScore()
                 break
             case 2:
-                if isShowScore{
-                
-                }else{
-                    self.selectType()
-                }
+                self.selectType()
                 break
             case 3:
-                if isShowScore{
-                    self.selectType()
-                }else{
-                    self.giveDescription()
-                }
+                self.giveDescription()
                 break
             default:
-                self.giveDescription()
                 break
         }
     }
@@ -187,6 +184,11 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
     }
     //分类
     func selectType(){
+        
+        let vc = Push_TypeController()
+        self.presentViewController(vc, animated: true) { () -> Void in
+            
+        }
     
     }
     //书评

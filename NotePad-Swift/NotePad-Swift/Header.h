@@ -19,6 +19,9 @@
 #import "VPImageCropperViewController.h"
 //星星评分
 #import "RatingView.h"
+//
+#import "AKSegmentedControl.h"
+#import "IGLDropDownMenu.h"
 
 
 #import "ListOneController.h"
