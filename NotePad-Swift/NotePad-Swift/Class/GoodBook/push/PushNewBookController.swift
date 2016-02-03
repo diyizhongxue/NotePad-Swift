@@ -127,7 +127,7 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
             row -= 1
         }
         
-        switch indexPath.row{
+        switch row{
             
             case 0:
                 self.selectTitle()
