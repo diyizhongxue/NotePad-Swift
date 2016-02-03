@@ -29,7 +29,7 @@ class PhotoPickerController: UIViewController, UINavigationControllerDelegate, U
         self.view.backgroundColor = UIColor.clearColor()
         
         self.picker = UIImagePickerController()
-        self.picker?.allowsEditing = false //不允许截图
+        self.picker?.allowsEditing = false //不允许截图 自带的截图是 截正方形
         self.picker?.delegate = self
     
     }
@@ -44,7 +44,7 @@ class PhotoPickerController: UIViewController, UINavigationControllerDelegate, U
     override func viewDidAppear(animated: Bool) {
         
         if self.alert == nil{
-        
+            
             self.alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
             self.alert?.addAction(UIAlertAction(title: "从相册中选择", style: .Default, handler: { (action) -> Void in
                 self.openPhotoAlbum()

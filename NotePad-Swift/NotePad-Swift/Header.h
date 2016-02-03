@@ -15,7 +15,10 @@
 #import "AVOSCloud/AVOSCloud.h"
 //刷新
 #import "MJRefresh.h"
-
+//图片裁剪
+#import "VPImageCropperViewController.h"
+//星星评分
+#import "RatingView.h"
 
 
 #import "ListOneController.h"

@@ -11,6 +11,8 @@ swift 中定义 oc 协议
 swift 协议必须实现
 oc 协议 可以选择实现 optional
 
+weak 弱引用 防止内存泄漏
+
 */
 
 import UIKit
@@ -25,7 +27,7 @@ class BookTitleView: UIView {
     var bookName:UITextField?
     var bookEditor:UITextField?
     
-    var delegate:BookCoverDelegate?
+    weak var delegate:BookCoverDelegate?
 
     override init(frame: CGRect) {
         super.init(frame:frame)

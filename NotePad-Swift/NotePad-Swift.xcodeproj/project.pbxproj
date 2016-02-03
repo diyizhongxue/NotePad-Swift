@@ -15,6 +15,11 @@
 		5A05AC961C3B896B00FF26C2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A05AC951C3B896B00FF26C2 /* CoreTelephony.framework */; };
 		5A05AC981C3B897500FF26C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A05AC971C3B897500FF26C2 /* CoreLocation.framework */; };
 		5A06EE6C1C61985500463F6E /* PhotoPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06EE6B1C61985500463F6E /* PhotoPickerController.swift */; };
+		5A06EE741C61C6B500463F6E /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A06EE731C61C6B500463F6E /* VPImageCropperViewController.m */; };
+		5A06EE761C61D4B100463F6E /* Push_BookTitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06EE751C61D4B100463F6E /* Push_BookTitleController.swift */; };
+		5A06EE7D1C61DB6900463F6E /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A06EE7C1C61DB6900463F6E /* RatingView.m */; };
+		5A06EE801C61DBDA00463F6E /* gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A06EE7F1C61DBDA00463F6E /* gray@2x.png */; };
+		5A06EE821C61DBEE00463F6E /* yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A06EE811C61DBEE00463F6E /* yellow@2x.png */; };
 		5A2AAD831C6089CB009230FD /* GBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD821C6089CB009230FD /* GBTabBarController.swift */; };
 		5A2AAD8A1C608AEB009230FD /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD891C608AEB009230FD /* RankViewController.swift */; };
 		5A2AAD8C1C608AFE009230FD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD8B1C608AFE009230FD /* SearchViewController.swift */; };
@@ -405,6 +410,13 @@
 		5A05AC951C3B896B00FF26C2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		5A05AC971C3B897500FF26C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5A06EE6B1C61985500463F6E /* PhotoPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerController.swift; sourceTree = "<group>"; };
+		5A06EE721C61C6B500463F6E /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		5A06EE731C61C6B500463F6E /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		5A06EE751C61D4B100463F6E /* Push_BookTitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_BookTitleController.swift; sourceTree = "<group>"; };
+		5A06EE7B1C61DB6900463F6E /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		5A06EE7C1C61DB6900463F6E /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
+		5A06EE7F1C61DBDA00463F6E /* gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gray@2x.png"; sourceTree = "<group>"; };
+		5A06EE811C61DBEE00463F6E /* yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow@2x.png"; sourceTree = "<group>"; };
 		5A2AAD821C6089CB009230FD /* GBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBTabBarController.swift; sourceTree = "<group>"; };
 		5A2AAD891C608AEB009230FD /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
 		5A2AAD8B1C608AFE009230FD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -839,6 +851,33 @@
 			path = AVOSCloud;
 			sourceTree = "<group>";
 		};
+		5A06EE711C61C6B500463F6E /* VPImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				5A06EE721C61C6B500463F6E /* VPImageCropperViewController.h */,
+				5A06EE731C61C6B500463F6E /* VPImageCropperViewController.m */,
+			);
+			path = VPImageCropper;
+			sourceTree = "<group>";
+		};
+		5A06EE7A1C61DB6900463F6E /* 星星评分 */ = {
+			isa = PBXGroup;
+			children = (
+				5A06EE7B1C61DB6900463F6E /* RatingView.h */,
+				5A06EE7C1C61DB6900463F6E /* RatingView.m */,
+			);
+			path = "星星评分";
+			sourceTree = "<group>";
+		};
+		5A06EE7E1C61DBD400463F6E /* GoodBook */ = {
+			isa = PBXGroup;
+			children = (
+				5A06EE811C61DBEE00463F6E /* yellow@2x.png */,
+				5A06EE7F1C61DBDA00463F6E /* gray@2x.png */,
+			);
+			path = GoodBook;
+			sourceTree = "<group>";
+		};
 		5A2AAD811C60895F009230FD /* GoodBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +913,7 @@
 				5A2AAD8D1C608B10009230FD /* PushViewController.swift */,
 				5A2AADDB1C60A8ED009230FD /* PushNewBookController.swift */,
 				5A2AADDD1C60BD22009230FD /* BookTitleView.swift */,
+				5A06EE751C61D4B100463F6E /* Push_BookTitleController.swift */,
 			);
 			path = push;
 			sourceTree = "<group>";
@@ -1096,6 +1136,7 @@
 				D74A18671C2FDC9000310F66 /* Base */,
 				D74A186A1C2FDC9000310F66 /* One */,
 				D74A186C1C2FDC9000310F66 /* Two */,
+				D74A186B1C2FDC9000310F66 /* Three */,
 				D74A18681C2FDC9000310F66 /* Four */,
 				D74A1E8F1C2FDEFB00310F66 /* Five */,
 			);
@@ -1113,6 +1154,8 @@
 		D74A18661C2FDAE300310F66 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				5A06EE7A1C61DB6900463F6E /* 星星评分 */,
+				5A06EE711C61C6B500463F6E /* VPImageCropper */,
 				5A89EE061C3DFEBA0073ED51 /* MJRefresh */,
 				5A05AC8A1C3B88F700FF26C2 /* AVOSCloud */,
 				5ADA6E761C35146A00730E5A /* CycleScrollView */,
@@ -1153,7 +1196,6 @@
 		D74A186A1C2FDC9000310F66 /* One */ = {
 			isa = PBXGroup;
 			children = (
-				D74A186B1C2FDC9000310F66 /* Three */,
 				5A3A1F671C3F50EE006D8C4C /* model */,
 				5A89EE381C3E663F0073ED51 /* view */,
 				D74A186D1C2FDCD100310F66 /* OneViewController.swift */,
@@ -1166,8 +1208,7 @@
 			children = (
 				D74A18711C2FDCE900310F66 /* ThreeViewController.swift */,
 			);
-			name = Three;
-			path = ../Three;
+			path = Three;
 			sourceTree = "<group>";
 		};
 		D74A186C1C2FDC9000310F66 /* Two */ = {
@@ -1181,6 +1222,7 @@
 		D74A187D1C2FDE0800310F66 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5A06EE7E1C61DBD400463F6E /* GoodBook */,
 				5AAD0E721C4CF5F0002ED9A4 /* 全局 */,
 				5A993C8C1C3A3F8A00AEB89E /* douban */,
 				D74A1C6C1C2FDEC600310F66 /* fisheye */,
@@ -1660,6 +1702,7 @@
 				D74A18411C2F640C00310F66 /* LaunchScreen.storyboard in Resources */,
 				D74A1DF71C2FDEC600310F66 /* group_btn_write_on@2x.png in Resources */,
 				D74A1E491C2FDEC600310F66 /* profile_follow.png in Resources */,
+				5A06EE821C61DBEE00463F6E /* yellow@2x.png in Resources */,
 				D74A1B141C2FDE7100310F66 /* guide4@2x.png in Resources */,
 				D74A1E281C2FDEC600310F66 /* more_icon_draft@2x.png in Resources */,
 				D74A1DBF1C2FDEC600310F66 /* compose_toolbar_4.png in Resources */,
@@ -1839,6 +1882,7 @@
 				D74A1E341C2FDEC600310F66 /* newbar_icon_2@2x.png in Resources */,
 				D74A1DDD1C2FDEC600310F66 /* detail_comment_item_9@2x.png in Resources */,
 				D74A1E4D1C2FDEC600310F66 /* radio_button_2.png in Resources */,
+				5A06EE801C61DBDA00463F6E /* gray@2x.png in Resources */,
 				D74A1DAE1C2FDEC600310F66 /* button_profile_mask.png in Resources */,
 				D74A1E391C2FDEC600310F66 /* newbar_icon_5.png in Resources */,
 				D74A1E711C2FDEC600310F66 /* timeline_dm_item_9.png in Resources */,
@@ -1966,11 +2010,13 @@
 				D74A18391C2F640C00310F66 /* ViewController.swift in Sources */,
 				5A42B6401C3D205F00ABE789 /* DetailCommentController.swift in Sources */,
 				5A2AAD991C609198009230FD /* DoubanViewController.swift in Sources */,
+				5A06EE7D1C61DB6900463F6E /* RatingView.m in Sources */,
 				D74A18761C2FDD5500310F66 /* FourViewController.swift in Sources */,
 				5A2AADDC1C60A8ED009230FD /* PushNewBookController.swift in Sources */,
 				5A89EE341C3DFEBA0073ED51 /* MJRefreshLegendHeader.m in Sources */,
 				5A2AADDE1C60BD22009230FD /* BookTitleView.swift in Sources */,
 				D74A18371C2F640C00310F66 /* AppDelegate.swift in Sources */,
+				5A06EE761C61D4B100463F6E /* Push_BookTitleController.swift in Sources */,
 				5A89EE2E1C3DFEBA0073ED51 /* MJRefreshConst.m in Sources */,
 				5ADA6E881C35146A00730E5A /* TAAnimatedDotView.m in Sources */,
 				5A2AAD8E1C608B10009230FD /* PushViewController.swift in Sources */,
@@ -1986,6 +2032,7 @@
 				D74A187C1C2FDDDA00310F66 /* LaunchViewController.swift in Sources */,
 				D74A1E931C2FDF4000310F66 /* Common.swift in Sources */,
 				5ADA6E891C35146A00730E5A /* TADotView.m in Sources */,
+				5A06EE741C61C6B500463F6E /* VPImageCropperViewController.m in Sources */,
 				D74A18721C2FDCE900310F66 /* ThreeViewController.swift in Sources */,
 				5A89EE301C3DFEBA0073ED51 /* MJRefreshGifFooter.m in Sources */,
 				5A993C921C3A432E00AEB89E /* HttpController.swift in Sources */,

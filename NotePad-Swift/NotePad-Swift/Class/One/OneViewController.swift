@@ -207,7 +207,7 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let img3 = UIImage(named:"h3.jpg")
         let img4 = UIImage(named:"h4.jpg")
         let images = [img1 as! AnyObject,img2 as! AnyObject,img3 as! AnyObject,img4 as! AnyObject];
-        let titles = ["豆瓣电台","AlertView","ActionSheet","新浪微博"];
+        let titles = ["标题","AlertView","ActionSheet","新浪微博"];
         let cycleScrollView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 180), imagesGroup: images)
         cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
         cycleScrollView.delegate = self
@@ -284,11 +284,8 @@ class OneViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         case 0:
             
-            let storyboard = UIStoryboard(name: "Douban", bundle: NSBundle.mainBundle())
-            let douBanVC = storyboard.instantiateViewControllerWithIdentifier("DoubanViewController")
-            douBanVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(douBanVC, animated: true)
-            
+
+            break
         case 1:
 
                 if #available(iOS 8.0, *) {
