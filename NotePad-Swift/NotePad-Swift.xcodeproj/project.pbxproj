@@ -14,6 +14,7 @@
 		5A05AC941C3B896000FF26C2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A05AC931C3B895F00FF26C2 /* MobileCoreServices.framework */; };
 		5A05AC961C3B896B00FF26C2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A05AC951C3B896B00FF26C2 /* CoreTelephony.framework */; };
 		5A05AC981C3B897500FF26C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A05AC971C3B897500FF26C2 /* CoreLocation.framework */; };
+		5A06EE6C1C61985500463F6E /* PhotoPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06EE6B1C61985500463F6E /* PhotoPickerController.swift */; };
 		5A2AAD831C6089CB009230FD /* GBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD821C6089CB009230FD /* GBTabBarController.swift */; };
 		5A2AAD8A1C608AEB009230FD /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD891C608AEB009230FD /* RankViewController.swift */; };
 		5A2AAD8C1C608AFE009230FD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AAD8B1C608AFE009230FD /* SearchViewController.swift */; };
@@ -403,6 +404,7 @@
 		5A05AC931C3B895F00FF26C2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5A05AC951C3B896B00FF26C2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		5A05AC971C3B897500FF26C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5A06EE6B1C61985500463F6E /* PhotoPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerController.swift; sourceTree = "<group>"; };
 		5A2AAD821C6089CB009230FD /* GBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBTabBarController.swift; sourceTree = "<group>"; };
 		5A2AAD891C608AEB009230FD /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
 		5A2AAD8B1C608AFE009230FD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -1125,6 +1127,7 @@
 				D74A18791C2FDDA000310F66 /* NavigationViewController.swift */,
 				5A993C911C3A432E00AEB89E /* HttpController.swift */,
 				5A993C931C3A53B200AEB89E /* 网络请求－1022错误.png */,
+				5A06EE6B1C61985500463F6E /* PhotoPickerController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1991,6 +1994,7 @@
 				5ADA6E8A1C35146A00730E5A /* TAPageControl.m in Sources */,
 				5A42B6331C3CE5EF00ABE789 /* PassWordChangeController.swift in Sources */,
 				5ADA6E8B1C35146A00730E5A /* UIView+SDExtension.m in Sources */,
+				5A06EE6C1C61985500463F6E /* PhotoPickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

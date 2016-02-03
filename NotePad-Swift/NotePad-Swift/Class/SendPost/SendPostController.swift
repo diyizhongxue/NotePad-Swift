@@ -93,7 +93,7 @@ class SendPostController: UIViewController, UITextViewDelegate, UIImagePickerCon
     }
     
     func selectImage(tap:UITapGestureRecognizer){
-        print("tap=====")
+//        print("tap=====")
         
         let pick:UIImagePickerController = UIImagePickerController()
         pick.delegate = self
@@ -116,7 +116,7 @@ class SendPostController: UIViewController, UITextViewDelegate, UIImagePickerCon
 
         let gotImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView!.image = gotImage
-        print(info);
+//        print(info);
 
         self.dismissViewControllerAnimated(true, completion: nil);
         

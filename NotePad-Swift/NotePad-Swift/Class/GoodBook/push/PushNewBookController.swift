@@ -8,20 +8,22 @@
 
 import UIKit
 
-class PushNewBookController: UIViewController {
+class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDelegate {
+    
+    var bookTitleView:BookTitleView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.orangeColor()
         
         creatViews()
     }
     func creatViews(){
     
-        let bookTitleView = BookTitleView(frame:CGRect(x: 0, y: 50, width: kScreenWidth, height: 140))
-        bookTitleView.backgroundColor = UIColor.grayColor()
-        self.view.addSubview(bookTitleView)
+        bookTitleView = BookTitleView(frame:CGRect(x: 0, y: 50, width: kScreenWidth, height: 130))
+        bookTitleView?.backgroundColor = UIColor.grayColor()
+        bookTitleView?.delegate = self
+        self.view.addSubview(bookTitleView!)
     }
     
     func colse(){
@@ -33,6 +35,22 @@ class PushNewBookController: UIViewController {
         
        print("sure")
     }
+    func bookCoverClick() {
+        
+        if #available(iOS 8.0, *) {
+            let vc = PhotoPickerController()
+            vc.delegate = self
+            self.presentViewController(vc, animated: true, completion: { () -> Void in
+            })
+        } else {
+            
+        }
+        
+    }
+    func getImageFromPicker(image: UIImage) {
+        
+        self.bookTitleView?.bookCover?.setImage(image, forState: .Normal)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,14 +59,5 @@ class PushNewBookController: UIViewController {
     
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
