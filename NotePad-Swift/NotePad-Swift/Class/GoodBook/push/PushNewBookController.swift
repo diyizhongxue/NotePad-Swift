@@ -24,6 +24,9 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
     var book_title:String = ""
     var isShowScore = false
     var ratingView:RatingView?
+    
+    var type:String = "文学"
+    var detailType:String = "文学"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,17 +95,19 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
         }
         cell.textLabel?.text = titleArray[indexPath.row]
         cell.textLabel?.font = UIFont(name: MY_FONT, size: 18)
-        
         cell.detailTextLabel?.font = UIFont(name: MY_FONT, size: 13)
-        switch indexPath.row{
+        
+        var row = indexPath.row
+        if self.isShowScore && row > 1{
+            row--
+        }
+        switch row{
         
             case 0:
                 cell.detailTextLabel?.text = book_title
-
-                break
-            case 1:
                 break
             case 2:
+                cell.detailTextLabel?.text = self.type + "->" + self.detailType
                 break
             case 3:
                 break
@@ -186,6 +191,14 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
     func selectType(){
         
         let vc = Push_TypeController()
+        vc.type = self.type
+        vc.detailType = self.type
+        vc.callBack = ({
+            (type:String,detailType:String)->Void in
+            self.type = type
+            self.detailType = detailType
+            self.tableView?.reloadData()
+        })
         self.presentViewController(vc, animated: true) { () -> Void in
             
         }

@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias Push_TypeControllerBlock = (type:String,detailType:String)->Void
+
 class Push_TypeController: UIViewController, IGLDropDownMenuDelegate {
     
     var segmentController1:AKSegmentedControl?
@@ -41,6 +43,8 @@ class Push_TypeController: UIViewController, IGLDropDownMenuDelegate {
     
     var type = "文学"
     var detailType = "文学"
+    
+    var callBack:Push_TypeControllerBlock?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -302,6 +306,8 @@ class Push_TypeController: UIViewController, IGLDropDownMenuDelegate {
         }
     }
     func sure(){
+        self.callBack!(type: type,detailType: detailType)
+        
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }
