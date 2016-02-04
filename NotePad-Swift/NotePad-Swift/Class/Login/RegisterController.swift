@@ -23,6 +23,9 @@ class RegisterController: UIViewController {
         self.edgesForExtendedLayout = .None
         
         creatViews()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidShow:"), name:UIKeyboardDidShowNotification, object: nil)
     }
     
     func creatViews(){
@@ -194,15 +197,27 @@ class RegisterController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /// 监听键盘弹出
+    func keyboardDidShow(notification: NSNotification) {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        UIView.animateWithDuration(0.3) { () -> Void in
+         
+            var frame = self.view.frame
+            frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - 64 - 49)
+            self.view.frame = frame
+            
+        }
     }
-    */
+    
+    /// 监听键盘收回
+    func keyboardWillHide(notification: NSNotification) {
+
+        UIView.animateWithDuration(0.3) { () -> Void in
+         
+            var frame = self.view.frame
+            frame = CGRect(x: 0, y: 64, width: kScreenWidth, height: kScreenHeight - 64 - 49)
+            self.view.frame = frame
+        }
+    }
 
 }
