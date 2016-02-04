@@ -136,10 +136,25 @@ class RegisterController: UIViewController {
             user.signUpInBackgroundWithBlock({ (succeeded:Bool, error:NSError!) -> Void in
                 if succeeded{
                     //注册好 就已经登录了
-                    print("帐号注册成功，并且已经登陆")
-
+//                    print("帐号注册成功，并且已经登陆")
+                    ProgressHUD.showSuccess("注册成功，请验证邮箱")
                 }else{
-                    print(error)
+                    
+                    if error.code == 125{
+                        ProgressHUD.showSuccess("邮箱不合法")
+
+                    }else if error.code == 202{
+                        ProgressHUD.showSuccess("用户名已存在")
+
+                    
+                    }else if error.code == 203{
+                        ProgressHUD.showSuccess("邮箱已注册")
+
+                        
+                    }else{
+                        ProgressHUD.showSuccess("注册失败，请重试")
+
+                    }
                 
                 }
             })

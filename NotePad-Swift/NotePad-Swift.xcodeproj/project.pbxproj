@@ -101,6 +101,8 @@
 		5AAD0E7A1C4D0259002ED9A4 /* MyCollectionPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD0E791C4D0259002ED9A4 /* MyCollectionPostController.swift */; };
 		5ABE854D1C509B2A00DD14D1 /* ListOneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE854C1C509B2A00DD14D1 /* ListOneController.m */; };
 		5AD6D92B1C633E80005A1370 /* Push_DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6D92A1C633E80005A1370 /* Push_DescriptionController.swift */; };
+		5AD6D9301C635098005A1370 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6D92D1C635098005A1370 /* ProgressHUD.bundle */; };
+		5AD6D9311C635098005A1370 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6D92F1C635098005A1370 /* ProgressHUD.m */; };
 		5ADA6E851C35146A00730E5A /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E781C35146A00730E5A /* SDCollectionViewCell.m */; };
 		5ADA6E861C35146A00730E5A /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E7A1C35146A00730E5A /* SDCycleScrollView.m */; };
 		5ADA6E871C35146A00730E5A /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E7C1C35146A00730E5A /* TAAbstractDotView.m */; };
@@ -548,6 +550,9 @@
 		5ABE854B1C509B2A00DD14D1 /* ListOneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOneController.h; sourceTree = "<group>"; };
 		5ABE854C1C509B2A00DD14D1 /* ListOneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOneController.m; sourceTree = "<group>"; };
 		5AD6D92A1C633E80005A1370 /* Push_DescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_DescriptionController.swift; sourceTree = "<group>"; };
+		5AD6D92D1C635098005A1370 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		5AD6D92E1C635098005A1370 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		5AD6D92F1C635098005A1370 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		5ADA6E771C35146A00730E5A /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
 		5ADA6E781C35146A00730E5A /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
 		5ADA6E791C35146A00730E5A /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
@@ -1180,6 +1185,16 @@
 			path = "全局";
 			sourceTree = "<group>";
 		};
+		5AD6D92C1C635098005A1370 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				5AD6D92D1C635098005A1370 /* ProgressHUD.bundle */,
+				5AD6D92E1C635098005A1370 /* ProgressHUD.h */,
+				5AD6D92F1C635098005A1370 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		5ADA6E761C35146A00730E5A /* CycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1292,6 +1307,7 @@
 		D74A18661C2FDAE300310F66 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				5AD6D92C1C635098005A1370 /* ProgressHUD */,
 				5A06EE851C62042000463F6E /* AKSegmentedControl */,
 				5A06EE991C62042000463F6E /* IGLDropDownMenu */,
 				5A06EE7A1C61DB6900463F6E /* 星星评分 */,
@@ -2060,6 +2076,7 @@
 				D74A1E1D1C2FDEC600310F66 /* mask_timeline_ref_top@2x.png in Resources */,
 				5A993C961C3A77F000AEB89E /* play.jpg in Resources */,
 				D74A1E701C2FDEC600310F66 /* timeline_dm_bg@2x.jpg in Resources */,
+				5AD6D9301C635098005A1370 /* ProgressHUD.bundle in Resources */,
 				D74A1B191C2FDE7100310F66 /* guideProgress4@2x.png in Resources */,
 				D74A1DF41C2FDEC600310F66 /* group_btn_video_on_title.png in Resources */,
 				D74A1DD81C2FDEC600310F66 /* detail_comment_input_bar.png in Resources */,
@@ -2169,6 +2186,7 @@
 				D74A187A1C2FDDA000310F66 /* NavigationViewController.swift in Sources */,
 				5A89EE2D1C3DFEBA0073ED51 /* MJRefreshComponent.m in Sources */,
 				5A3A1F661C3F42AD006D8C4C /* OneCell.swift in Sources */,
+				5AD6D9311C635098005A1370 /* ProgressHUD.m in Sources */,
 				5A2AAD831C6089CB009230FD /* GBTabBarController.swift in Sources */,
 				5A89EE361C3DFEBA0073ED51 /* UIScrollView+MJRefresh.m in Sources */,
 				5A06EE9E1C62042000463F6E /* AKSegmentedControl.m in Sources */,
