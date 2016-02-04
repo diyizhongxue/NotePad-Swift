@@ -219,8 +219,8 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
         
         user.saveInBackgroundWithBlock { (succeeded:Bool, error:NSError!) -> Void in
             if succeeded{
-                
-                print("收藏成功")
+                ProgressHUD.showSuccess("收藏成功")
+
             }else{
                 
             }
@@ -243,7 +243,7 @@ class DetailCommentController: UIViewController, UITableViewDelegate, UITableVie
             
             if succeeded{
                 // post 保存成功
-                
+                ProgressHUD.showSuccess("评论成功")
                 self.getNewData()
             }else{
                 

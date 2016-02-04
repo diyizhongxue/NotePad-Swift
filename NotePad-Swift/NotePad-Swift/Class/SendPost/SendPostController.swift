@@ -79,10 +79,9 @@ class SendPostController: UIViewController, UITextViewDelegate, UIImagePickerCon
         post.saveInBackgroundWithBlock { (succeeded:Bool, error:NSError!) -> Void in
             if succeeded{
                 // post 保存成功
+                ProgressHUD.showSuccess("发帖成功")
+
             }else{
-               
-                
-                
                 // 保存 post 时出错
                 print(error)
             }
