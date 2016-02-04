@@ -59,34 +59,24 @@ class LogInController: UIViewController {
     func logIn(btn:UIButton){
         AVUser.logInWithUsernameInBackground(self.nameTextField?.text, password: self.passWordTextField?.text) { (user:AVUser!, error:NSError!) -> Void in
             if user != nil{
-                print("登录成功")
                 
+                ProgressHUD.showSuccess("登录成功")
                 self.navigationController?.popViewControllerAnimated(true)
 
             }else{
                 if error.code == 210{
-                    ProgressHUD.showSuccess("用户名或密码错误")
-                    
+                    ProgressHUD.showSuccess("密码错误")
                 }else if error.code == 211{
                     ProgressHUD.showSuccess("不存在该用户")
-                    
-                    
                 }else if error.code == 216{
                     ProgressHUD.showSuccess("未验证邮箱")
-                    
-                    
                 }else if error.code == 1{
                     ProgressHUD.showSuccess("操作过于频繁")
-                    
-                    
                 }else{
                     ProgressHUD.showSuccess("登录失败，请重试")
-                    
                 }
             }
         }
-        
-    
     }
     
     override func didReceiveMemoryWarning() {
