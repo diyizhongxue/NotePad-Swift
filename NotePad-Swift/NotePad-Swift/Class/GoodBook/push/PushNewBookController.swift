@@ -21,12 +21,17 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
     var tableView:UITableView?
     var titleArray:Array<String> = []
     
+    //标题
     var book_title:String = ""
+    //评分
     var isShowScore = false
     var ratingView:RatingView?
-    
+    //分类
     var type:String = "文学"
     var detailType:String = "文学"
+    //书评
+    var Book_Description = ""
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +116,14 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
                 break
             case 3:
                 break
+            case 4:
+                cell.accessoryType = .None
+                let commentView = UITextView(frame: CGRectMake(4,4,kScreenWidth-8,80))
+                commentView.text = self.Book_Description
+                commentView.font = UIFont(name: MY_FONT, size: 14)
+                commentView.editable = false
+                cell.contentView.addSubview(commentView)
+                break
             default:
                 break
         }
@@ -121,6 +134,15 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
         }
         
         return cell
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if isShowScore && indexPath.row > 5 {
+            return 88
+        }else if !self.isShowScore && indexPath.row > 4 {
+            return 88
+        }else{
+            return 44
+        }
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //点击变暗再恢复 的动画
@@ -206,7 +228,24 @@ class PushNewBookController: UIViewController, BookCoverDelegate, PhotoPickerDel
     }
     //书评
     func giveDescription(){
-    
+        
+        let vc = Push_DescriptionController()
+        vc.textView?.text = self.Book_Description
+        vc.callBack = ({(description:String)->Void in
+            self.Book_Description = description
+            if self.titleArray.last == "" {
+                self.titleArray.removeLast()
+            }
+            if description != "" {
+                self.titleArray.append("")
+            }
+            self.tableView?.reloadData()
+            
+        })
+
+        self.presentViewController(vc, animated: true) { () -> Void in
+            
+        }
     }
     
 

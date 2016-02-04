@@ -100,6 +100,7 @@
 		5AAD0E741C4CF5F5002ED9A4 /* qidongye.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAD0E731C4CF5F5002ED9A4 /* qidongye.png */; };
 		5AAD0E7A1C4D0259002ED9A4 /* MyCollectionPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD0E791C4D0259002ED9A4 /* MyCollectionPostController.swift */; };
 		5ABE854D1C509B2A00DD14D1 /* ListOneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE854C1C509B2A00DD14D1 /* ListOneController.m */; };
+		5AD6D92B1C633E80005A1370 /* Push_DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6D92A1C633E80005A1370 /* Push_DescriptionController.swift */; };
 		5ADA6E851C35146A00730E5A /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E781C35146A00730E5A /* SDCollectionViewCell.m */; };
 		5ADA6E861C35146A00730E5A /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E7A1C35146A00730E5A /* SDCycleScrollView.m */; };
 		5ADA6E871C35146A00730E5A /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA6E7C1C35146A00730E5A /* TAAbstractDotView.m */; };
@@ -546,6 +547,7 @@
 		5AAD0E791C4D0259002ED9A4 /* MyCollectionPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionPostController.swift; sourceTree = "<group>"; };
 		5ABE854B1C509B2A00DD14D1 /* ListOneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOneController.h; sourceTree = "<group>"; };
 		5ABE854C1C509B2A00DD14D1 /* ListOneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOneController.m; sourceTree = "<group>"; };
+		5AD6D92A1C633E80005A1370 /* Push_DescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_DescriptionController.swift; sourceTree = "<group>"; };
 		5ADA6E771C35146A00730E5A /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
 		5ADA6E781C35146A00730E5A /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
 		5ADA6E791C35146A00730E5A /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
@@ -1049,6 +1051,7 @@
 				5A2AADDD1C60BD22009230FD /* BookTitleView.swift */,
 				5A06EE751C61D4B100463F6E /* Push_BookTitleController.swift */,
 				5A06EE831C61EBD000463F6E /* Push_TypeController.swift */,
+				5AD6D92A1C633E80005A1370 /* Push_DescriptionController.swift */,
 			);
 			path = push;
 			sourceTree = "<group>";
@@ -2183,6 +2186,7 @@
 				5A2AADDC1C60A8ED009230FD /* PushNewBookController.swift in Sources */,
 				5A89EE341C3DFEBA0073ED51 /* MJRefreshLegendHeader.m in Sources */,
 				5A2AADDE1C60BD22009230FD /* BookTitleView.swift in Sources */,
+				5AD6D92B1C633E80005A1370 /* Push_DescriptionController.swift in Sources */,
 				D74A18371C2F640C00310F66 /* AppDelegate.swift in Sources */,
 				5A06EE761C61D4B100463F6E /* Push_BookTitleController.swift in Sources */,
 				5A89EE2E1C3DFEBA0073ED51 /* MJRefreshConst.m in Sources */,
