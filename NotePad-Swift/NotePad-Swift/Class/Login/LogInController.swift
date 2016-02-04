@@ -64,8 +64,25 @@ class LogInController: UIViewController {
                 self.navigationController?.popViewControllerAnimated(true)
 
             }else{
-                print(error)
-
+                if error.code == 210{
+                    ProgressHUD.showSuccess("用户名或密码错误")
+                    
+                }else if error.code == 211{
+                    ProgressHUD.showSuccess("不存在该用户")
+                    
+                    
+                }else if error.code == 216{
+                    ProgressHUD.showSuccess("未验证邮箱")
+                    
+                    
+                }else if error.code == 1{
+                    ProgressHUD.showSuccess("操作过于频繁")
+                    
+                    
+                }else{
+                    ProgressHUD.showSuccess("登录失败，请重试")
+                    
+                }
             }
         }
         
