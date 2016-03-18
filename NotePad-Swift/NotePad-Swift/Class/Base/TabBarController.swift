@@ -23,19 +23,19 @@ class TabBarController: UITabBarController {
     
     var selectView:UIImageView?
     
-    //    class var sharedInstance:TabBarController{
-    //
-    //        struct Static {
-    //            static var onceToken : dispatch_once_t = 0
-    //            static var instance : TabBarController? = nil
-    //        }
-    //        dispatch_once(&Static.onceToken) {
-    //            Static.instance = TabBarController()
-    //
-    //        }
-    //
-    //        return Static.instance!
-    //    }
+        class var sharedInstance:TabBarController{
+    
+            struct Static {
+                static var onceToken : dispatch_once_t = 0
+                static var instance : TabBarController? = nil
+            }
+            dispatch_once(&Static.onceToken) {
+                Static.instance = TabBarController()
+    
+            }
+    
+            return Static.instance!
+        }
     
     
     override func viewDidLoad() {

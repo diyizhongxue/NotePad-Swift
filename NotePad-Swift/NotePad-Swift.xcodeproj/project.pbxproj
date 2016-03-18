@@ -67,6 +67,14 @@
 		5A2AADDE1C60BD22009230FD /* BookTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AADDD1C60BD22009230FD /* BookTitleView.swift */; };
 		5A3A1F661C3F42AD006D8C4C /* OneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A1F651C3F42AD006D8C4C /* OneCell.swift */; };
 		5A3A1F691C3F510B006D8C4C /* OneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A1F681C3F510B006D8C4C /* OneModel.swift */; };
+		5A3EC4941C9B970F00A614BB /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC48A1C9B970F00A614BB /* WMFooldView.m */; };
+		5A3EC4951C9B970F00A614BB /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC48C1C9B970F00A614BB /* WMMenuItem.m */; };
+		5A3EC4961C9B970F00A614BB /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC48E1C9B970F00A614BB /* WMMenuView.m */; };
+		5A3EC4971C9B970F00A614BB /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC4901C9B970F00A614BB /* WMProgressView.m */; };
+		5A3EC4981C9B970F00A614BB /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC4931C9B970F00A614BB /* WMPageController.m */; };
+		5A3EC49D1C9B9A8D00A614BB /* OneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC49A1C9B9A8D00A614BB /* OneCell.m */; };
+		5A3EC49E1C9B9A8D00A614BB /* TwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC49C1C9B9A8D00A614BB /* TwoCell.m */; };
+		5A3EC4A11C9B9A9700A614BB /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC4A01C9B9A9700A614BB /* OtherViewController.m */; };
 		5A42B62F1C3CB02700ABE789 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B62E1C3CB02700ABE789 /* RegisterController.swift */; };
 		5A42B6311C3CB05300ABE789 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B6301C3CB05300ABE789 /* LogInController.swift */; };
 		5A42B6331C3CE5EF00ABE789 /* PassWordChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42B6321C3CE5EF00ABE789 /* PassWordChangeController.swift */; };
@@ -95,6 +103,7 @@
 		5A993C921C3A432E00AEB89E /* HttpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A993C911C3A432E00AEB89E /* HttpController.swift */; };
 		5A993C941C3A53B200AEB89E /* 网络请求－1022错误.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A993C931C3A53B200AEB89E /* 网络请求－1022错误.png */; };
 		5A993C961C3A77F000AEB89E /* play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A993C951C3A77F000AEB89E /* play.jpg */; };
+		5AA9E1951C9B9E9D006AECC8 /* PageRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9E1941C9B9E9D006AECC8 /* PageRootController.m */; };
 		5AAD0E701C4CF5AB002ED9A4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD0E6E1C4CF5AB002ED9A4 /* SettingViewController.swift */; };
 		5AAD0E711C4CF5AB002ED9A4 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD0E6F1C4CF5AB002ED9A4 /* MyPostViewController.swift */; };
 		5AAD0E741C4CF5F5002ED9A4 /* qidongye.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAD0E731C4CF5F5002ED9A4 /* qidongye.png */; };
@@ -503,6 +512,23 @@
 		5A2AADDD1C60BD22009230FD /* BookTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTitleView.swift; sourceTree = "<group>"; };
 		5A3A1F651C3F42AD006D8C4C /* OneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCell.swift; sourceTree = "<group>"; };
 		5A3A1F681C3F510B006D8C4C /* OneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneModel.swift; sourceTree = "<group>"; };
+		5A3EC4891C9B970F00A614BB /* WMFooldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFooldView.h; sourceTree = "<group>"; };
+		5A3EC48A1C9B970F00A614BB /* WMFooldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFooldView.m; sourceTree = "<group>"; };
+		5A3EC48B1C9B970F00A614BB /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		5A3EC48C1C9B970F00A614BB /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		5A3EC48D1C9B970F00A614BB /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		5A3EC48E1C9B970F00A614BB /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		5A3EC48F1C9B970F00A614BB /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		5A3EC4901C9B970F00A614BB /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		5A3EC4911C9B970F00A614BB /* WMPageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageConst.h; sourceTree = "<group>"; };
+		5A3EC4921C9B970F00A614BB /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		5A3EC4931C9B970F00A614BB /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		5A3EC4991C9B9A8D00A614BB /* OneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneCell.h; sourceTree = "<group>"; };
+		5A3EC49A1C9B9A8D00A614BB /* OneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneCell.m; sourceTree = "<group>"; };
+		5A3EC49B1C9B9A8D00A614BB /* TwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoCell.h; sourceTree = "<group>"; };
+		5A3EC49C1C9B9A8D00A614BB /* TwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoCell.m; sourceTree = "<group>"; };
+		5A3EC49F1C9B9A9700A614BB /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
+		5A3EC4A01C9B9A9700A614BB /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		5A42B62E1C3CB02700ABE789 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5A42B6301C3CB05300ABE789 /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		5A42B6321C3CE5EF00ABE789 /* PassWordChangeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassWordChangeController.swift; sourceTree = "<group>"; };
@@ -543,6 +569,8 @@
 		5A993C911C3A432E00AEB89E /* HttpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpController.swift; sourceTree = "<group>"; };
 		5A993C931C3A53B200AEB89E /* 网络请求－1022错误.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "网络请求－1022错误.png"; sourceTree = "<group>"; };
 		5A993C951C3A77F000AEB89E /* play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = play.jpg; sourceTree = "<group>"; };
+		5AA9E1931C9B9E9D006AECC8 /* PageRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageRootController.h; sourceTree = "<group>"; };
+		5AA9E1941C9B9E9D006AECC8 /* PageRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageRootController.m; sourceTree = "<group>"; };
 		5AAD0E6E1C4CF5AB002ED9A4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5AAD0E6F1C4CF5AB002ED9A4 /* MyPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
 		5AAD0E731C4CF5F5002ED9A4 /* qidongye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qidongye.png; sourceTree = "<group>"; };
@@ -1095,6 +1123,32 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		5A3EC4871C9B970F00A614BB /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				5A3EC4881C9B970F00A614BB /* WMMenuView */,
+				5A3EC4911C9B970F00A614BB /* WMPageConst.h */,
+				5A3EC4921C9B970F00A614BB /* WMPageController.h */,
+				5A3EC4931C9B970F00A614BB /* WMPageController.m */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		5A3EC4881C9B970F00A614BB /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				5A3EC4891C9B970F00A614BB /* WMFooldView.h */,
+				5A3EC48A1C9B970F00A614BB /* WMFooldView.m */,
+				5A3EC48B1C9B970F00A614BB /* WMMenuItem.h */,
+				5A3EC48C1C9B970F00A614BB /* WMMenuItem.m */,
+				5A3EC48D1C9B970F00A614BB /* WMMenuView.h */,
+				5A3EC48E1C9B970F00A614BB /* WMMenuView.m */,
+				5A3EC48F1C9B970F00A614BB /* WMProgressView.h */,
+				5A3EC4901C9B970F00A614BB /* WMProgressView.m */,
+			);
+			path = WMMenuView;
+			sourceTree = "<group>";
+		};
 		5A42B62D1C3C9EB000ABE789 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,6 +1301,7 @@
 			children = (
 				D74A187D1C2FDE0800310F66 /* Images */,
 				D74A18641C2FDAE300310F66 /* Class */,
+				D74A18671C2FDC9000310F66 /* Base */,
 				D74A18651C2FDAE300310F66 /* Common */,
 				D74A18661C2FDAE300310F66 /* Lib */,
 				D74A18361C2F640C00310F66 /* AppDelegate.swift */,
@@ -1286,7 +1341,6 @@
 				5A42B6381C3D05B900ABE789 /* SendPost */,
 				5A42B62D1C3C9EB000ABE789 /* Login */,
 				D74A18691C2FDC9000310F66 /* Launch */,
-				D74A18671C2FDC9000310F66 /* Base */,
 				D74A186A1C2FDC9000310F66 /* One */,
 				D74A186C1C2FDC9000310F66 /* Two */,
 				D74A186B1C2FDC9000310F66 /* Three */,
@@ -1307,6 +1361,7 @@
 		D74A18661C2FDAE300310F66 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				5A3EC4871C9B970F00A614BB /* WMPageController */,
 				5AD6D92C1C635098005A1370 /* ProgressHUD */,
 				5A06EE851C62042000463F6E /* AKSegmentedControl */,
 				5A06EE991C62042000463F6E /* IGLDropDownMenu */,
@@ -1328,7 +1383,8 @@
 				5A993C931C3A53B200AEB89E /* 网络请求－1022错误.png */,
 				5A06EE6B1C61985500463F6E /* PhotoPickerController.swift */,
 			);
-			path = Base;
+			name = Base;
+			path = Class/Base;
 			sourceTree = "<group>";
 		};
 		D74A18681C2FDC9000310F66 /* Four */ = {
@@ -1337,6 +1393,14 @@
 				D74A18751C2FDD5500310F66 /* FourViewController.swift */,
 				5ABE854B1C509B2A00DD14D1 /* ListOneController.h */,
 				5ABE854C1C509B2A00DD14D1 /* ListOneController.m */,
+				5AA9E1931C9B9E9D006AECC8 /* PageRootController.h */,
+				5AA9E1941C9B9E9D006AECC8 /* PageRootController.m */,
+				5A3EC49F1C9B9A9700A614BB /* OtherViewController.h */,
+				5A3EC4A01C9B9A9700A614BB /* OtherViewController.m */,
+				5A3EC4991C9B9A8D00A614BB /* OneCell.h */,
+				5A3EC49A1C9B9A8D00A614BB /* OneCell.m */,
+				5A3EC49B1C9B9A8D00A614BB /* TwoCell.h */,
+				5A3EC49C1C9B9A8D00A614BB /* TwoCell.m */,
 			);
 			path = Four;
 			sourceTree = "<group>";
@@ -2173,6 +2237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74A1E911C2FDF0900310F66 /* FiveViewController.swift in Sources */,
+				5A3EC4951C9B970F00A614BB /* WMMenuItem.m in Sources */,
 				5A89EE351C3DFEBA0073ED51 /* UIScrollView+MJExtension.m in Sources */,
 				5ADA6E871C35146A00730E5A /* TAAbstractDotView.m in Sources */,
 				5A42B62F1C3CB02700ABE789 /* RegisterController.swift in Sources */,
@@ -2193,12 +2258,17 @@
 				5A2AAD921C608B26009230FD /* CircleViewController.swift in Sources */,
 				5A06EEB01C62042000463F6E /* IGLDropDownMenu.m in Sources */,
 				D74A186E1C2FDCD100310F66 /* OneViewController.swift in Sources */,
+				5AA9E1951C9B9E9D006AECC8 /* PageRootController.m in Sources */,
 				5A89EE331C3DFEBA0073ED51 /* MJRefreshLegendFooter.m in Sources */,
 				5ABE854D1C509B2A00DD14D1 /* ListOneController.m in Sources */,
 				5A89EE321C3DFEBA0073ED51 /* MJRefreshHeader.m in Sources */,
 				D74A18391C2F640C00310F66 /* ViewController.swift in Sources */,
 				5A42B6401C3D205F00ABE789 /* DetailCommentController.swift in Sources */,
 				5A2AAD991C609198009230FD /* DoubanViewController.swift in Sources */,
+				5A3EC4941C9B970F00A614BB /* WMFooldView.m in Sources */,
+				5A3EC49D1C9B9A8D00A614BB /* OneCell.m in Sources */,
+				5A3EC4A11C9B9A9700A614BB /* OtherViewController.m in Sources */,
+				5A3EC49E1C9B9A8D00A614BB /* TwoCell.m in Sources */,
 				5A06EE7D1C61DB6900463F6E /* RatingView.m in Sources */,
 				D74A18761C2FDD5500310F66 /* FourViewController.swift in Sources */,
 				5A2AADDC1C60A8ED009230FD /* PushNewBookController.swift in Sources */,
@@ -2217,12 +2287,14 @@
 				5A3A1F691C3F510B006D8C4C /* OneModel.swift in Sources */,
 				5A2AAD971C609198009230FD /* ChannelViewController.swift in Sources */,
 				D74A18781C2FDD7B00310F66 /* TabBarController.swift in Sources */,
+				5A3EC4971C9B970F00A614BB /* WMProgressView.m in Sources */,
 				D74A18701C2FDCDE00310F66 /* TwoViewController.swift in Sources */,
 				5A42B63C1C3D05E000ABE789 /* SendPostController.swift in Sources */,
 				5A89EE311C3DFEBA0073ED51 /* MJRefreshGifHeader.m in Sources */,
 				D74A187C1C2FDDDA00310F66 /* LaunchViewController.swift in Sources */,
 				5A06EEAF1C62042000463F6E /* IGLDropDownItem.m in Sources */,
 				D74A1E931C2FDF4000310F66 /* Common.swift in Sources */,
+				5A3EC4981C9B970F00A614BB /* WMPageController.m in Sources */,
 				5ADA6E891C35146A00730E5A /* TADotView.m in Sources */,
 				5A06EE741C61C6B500463F6E /* VPImageCropperViewController.m in Sources */,
 				D74A18721C2FDCE900310F66 /* ThreeViewController.swift in Sources */,
@@ -2231,6 +2303,7 @@
 				5A2AAD8C1C608AFE009230FD /* SearchViewController.swift in Sources */,
 				5AAD0E711C4CF5AB002ED9A4 /* MyPostViewController.swift in Sources */,
 				5ADA6E8A1C35146A00730E5A /* TAPageControl.m in Sources */,
+				5A3EC4961C9B970F00A614BB /* WMMenuView.m in Sources */,
 				5A42B6331C3CE5EF00ABE789 /* PassWordChangeController.swift in Sources */,
 				5ADA6E8B1C35146A00730E5A /* UIView+SDExtension.m in Sources */,
 				5A06EE6C1C61985500463F6E /* PhotoPickerController.swift in Sources */,

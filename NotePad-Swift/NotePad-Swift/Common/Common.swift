@@ -86,7 +86,7 @@ class Common: NSObject {
     static func addRightBtn(target:UIViewController, btnTitle:String = "确定"){
         
         let btn = UIButton(frame: CGRect(x: kScreenWidth - 120, y: 20, width: 100, height: 40))
-        btn.contentHorizontalAlignment = .Right //按钮文字 居左
+        btn.contentHorizontalAlignment = .Right //按钮文字 居右
         btn.setTitle(btnTitle, forState: .Normal)
         btn.setTitleColor(UIColor.blackColor(), forState: .Normal)
         btn.titleLabel?.font = UIFont(name:MY_FONT, size: 20)

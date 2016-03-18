@@ -24,7 +24,8 @@
 #import "IGLDropDownMenu.h"
 //添加提示 视图
 #import "ProgressHUD.h"
-
+//添加 页卡 控制器
+#import "PageRootController.h"
 
 #import "ListOneController.h"
 

@@ -139,26 +139,6 @@
             </objects>
             <point key="canvasLocation" x="781" y="395"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="RwU-vR-y24">
-            <objects>
-                <viewController id="m9k-U6-sV3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3QZ-me-73L"/>
-                        <viewControllerLayoutGuide type="bottom" id="8eG-2G-Mjt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7FJ-Fh-QEB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hrX-xq-0kv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1597" y="342"/>
-        </scene>
     </scenes>
     <resources>
         <image name="douban.png" width="252" height="252"/>
